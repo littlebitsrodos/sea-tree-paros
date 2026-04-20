@@ -186,10 +186,17 @@ const translations = {
       dates: "Preferred Dates",
       guests: "Number of Guests",
       message: "Your Message",
+      newsletter: "Send me occasional Paros tips & availability updates",
       send: "Send Inquiry",
       platformsTitle: "Or Book Directly",
       airbnb: "Book on Airbnb",
-      bookingcom: "Book on Booking.com"
+      bookingcom: "Book on Booking.com",
+      directStrip: {
+        title: "Book direct — save on fees, reply fastest",
+        noFees: "No platform commission",
+        fastReplies: "Replies within hours from the owner",
+        flexibility: "Flexible on dates & long stays"
+      }
     },
 
     // Footer
@@ -386,10 +393,17 @@ const translations = {
       dates: "Fechas Preferidas",
       guests: "Número de Huéspedes",
       message: "Tu Mensaje",
+      newsletter: "Envíame consejos ocasionales sobre Paros y disponibilidad",
       send: "Enviar Consulta",
       platformsTitle: "O Reserva Directamente",
       airbnb: "Reservar en Airbnb",
-      bookingcom: "Reservar en Booking.com"
+      bookingcom: "Reservar en Booking.com",
+      directStrip: {
+        title: "Reserva directa — menor precio, respuesta más rápida",
+        noFees: "Sin comisión de plataforma",
+        fastReplies: "Respuestas en horas, directamente del propietario",
+        flexibility: "Flexibilidad en fechas y estancias largas"
+      }
     },
 
     // Footer
@@ -586,10 +600,17 @@ const translations = {
       dates: "Προτιμώμενες Ημερομηνίες",
       guests: "Αριθμός Επισκεπτών",
       message: "Το Μήνυμά σας",
+      newsletter: "Στείλτε μου περιστασιακές συμβουλές για την Πάρο & διαθεσιμότητα",
       send: "Αποστολή Ερώτησης",
       platformsTitle: "Ή Κλείστε Απευθείας",
       airbnb: "Κράτηση στο Airbnb",
-      bookingcom: "Κράτηση στο Booking.com"
+      bookingcom: "Κράτηση στο Booking.com",
+      directStrip: {
+        title: "Κλείστε απευθείας — χωρίς προμήθειες, ταχύτερη απάντηση",
+        noFees: "Χωρίς προμήθεια πλατφόρμας",
+        fastReplies: "Απαντήσεις εντός ωρών, απευθείας από τον ιδιοκτήτη",
+        flexibility: "Ευελιξία σε ημερομηνίες & μεγαλύτερες διαμονές"
+      }
     },
 
     // Footer
@@ -786,10 +807,17 @@ const translations = {
       dates: "Dates Préférées",
       guests: "Nombre d'Invités",
       message: "Votre Message",
+      newsletter: "Envoyez-moi des conseils occasionnels sur Paros et la disponibilité",
       send: "Envoyer la Demande",
       platformsTitle: "Ou Réservez Directement",
       airbnb: "Réserver sur Airbnb",
-      bookingcom: "Réserver sur Booking.com"
+      bookingcom: "Réserver sur Booking.com",
+      directStrip: {
+        title: "Réservez en direct — moins cher, réponse plus rapide",
+        noFees: "Pas de commission de plateforme",
+        fastReplies: "Réponses en quelques heures, directement du propriétaire",
+        flexibility: "Flexibilité sur les dates & longs séjours"
+      }
     },
 
     // Footer
