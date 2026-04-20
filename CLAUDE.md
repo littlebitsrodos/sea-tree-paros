@@ -65,7 +65,6 @@ Skip it and the system is just files on disk.
 | `index.html` | Single-page site. Hero, gallery, amenities, neighborhood, contact. |
 | `styles.css` | Full design system. CSS custom properties, mobile-first breakpoints at 768 / 1024. |
 | `script.js` | Language switcher, gallery carousel, calendar, form handling, SW registration. |
-| `script.min.js` | Minified bundle (stale — dev edits go in `script.js`). |
 | `translations.js` | EN / ES / EL / FR copy. Keyed by `data-translate` attributes. |
 | `sw.js` | Service worker, cache-first. Bump version string on asset changes. |
 | `manifest.json` | PWA manifest. |
