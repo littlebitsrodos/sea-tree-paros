@@ -1,4 +1,4 @@
-const CACHE_NAME = 'romantica-blue-v2';
+const CACHE_NAME = 'romantica-blue-v3';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -7,7 +7,7 @@ const ASSETS_TO_CACHE = [
     './translations.js',
     './offline.html',
     './favicon.svg',
-    'https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js'
+    './ical.min.js'
 ];
 
 // Install Event - Cache Core Assets
