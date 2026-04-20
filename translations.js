@@ -175,6 +175,61 @@ const translations = {
       days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     },
 
+    // FAQ
+    faq: {
+      label: "Frequently Asked",
+      title: "Questions, answered",
+      subtitle: "What guests ask before they book — in one place.",
+      q1: {
+        q: "How do I get from Paros port to Aliki?",
+        a: "By car, 15 minutes. By bus, 25–35 minutes on the KTEL Paros line with a stop in Aliki village. Taxis are available at the port. If you're flying in, Paros airport is 5 minutes from Sea Tree."
+      },
+      q2: {
+        q: "Is Sea Tree family-friendly?",
+        a: "Yes. Two bedrooms sleep up to four; the terrace is fully fenced from the water so kids can play freely. Bring water shoes — the immediate coast is rocky; Aliki sandy beach is one minute on foot."
+      },
+      q3: {
+        q: "What's the check-in process?",
+        a: "Self-check-in from 15:00. Yorgos or his assistant will meet you in person on request; otherwise you'll get key details by message the morning of arrival."
+      },
+      q4: {
+        q: "Can I leave bags before 15:00 or after 11:00?",
+        a: "Yes — drop them off from noon onward on arrival day, and leave them until your ferry on departure day. No extra charge."
+      },
+      q5: {
+        q: "Is there parking?",
+        a: "Free public parking on the street outside. Aliki has more than enough spots except the first two weeks of August."
+      },
+      q6: {
+        q: "Is the beach sandy?",
+        a: "The coast directly in front of Sea Tree is natural stone — dramatic at sunset, not barefoot-friendly. For sand: Aliki main beach is a 1-minute walk, Piso Aliki 5 minutes, Agios Nikolaos 10 minutes by car."
+      },
+      q7: {
+        q: "Pet policy?",
+        a: "Sorry — no pets. It's a cleaning and allergy decision for future guests."
+      },
+      q8: {
+        q: "How far is the nightlife?",
+        a: "Naousa, the island's late-night hub, is 22 km / 25 minutes by car. Parikia is 12 km / 15 minutes. Aliki itself is intentionally quiet — tavernas run late but no clubs."
+      },
+      q9: {
+        q: "What's the WiFi speed?",
+        a: "Starlink: typically 150–250 Mbps down, 15–30 Mbps up, under 60 ms latency. Good enough for video calls and remote work."
+      },
+      q10: {
+        q: "Is there electric-car charging nearby?",
+        a: "Closest fast charger is in Parikia, 12 km / 15 minutes. A few Level-2 AC chargers at hotels in Naousa. No public charger in Aliki village yet."
+      },
+      q11: {
+        q: "Pharmacy and medical care?",
+        a: "Small pharmacy in Aliki village, 3 minutes on foot. Larger pharmacies and a medical center in Parikia. The Paros Health Center (24/7 emergency) is 15 minutes by car."
+      },
+      q12: {
+        q: "Does the supermarket take card?",
+        a: "Yes — both the market in Aliki and the larger ones in Parikia accept cards. Bring some cash for smaller tavernas and the odd island kiosk."
+      }
+    },
+
     // Booking/Contact
     booking: {
       label: "Book Your Stay",
@@ -380,6 +435,61 @@ const translations = {
       months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
       days: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"]
+    },
+
+    // FAQ
+    faq: {
+      label: "Preguntas Frecuentes",
+      title: "Preguntas, respondidas",
+      subtitle: "Lo que preguntan los huéspedes antes de reservar — en un solo lugar.",
+      q1: {
+        q: "¿Cómo llego desde el puerto de Paros a Aliki?",
+        a: "En coche, 15 minutos. En autobús, 25–35 minutos en la línea KTEL Paros con parada en Aliki. Hay taxis disponibles en el puerto. Si vuelas, el aeropuerto de Paros está a 5 minutos de Sea Tree."
+      },
+      q2: {
+        q: "¿Sea Tree es apto para familias?",
+        a: "Sí. Dos dormitorios para hasta cuatro personas; la terraza está totalmente cercada del mar para que los niños jueguen con tranquilidad. Trae zapatos de agua — la costa inmediata es rocosa; la playa de arena de Aliki está a 1 minuto a pie."
+      },
+      q3: {
+        q: "¿Cómo es el proceso de check-in?",
+        a: "Auto check-in desde las 15:00. Yorgos o su asistente te recibirán en persona si lo deseas; de lo contrario, recibirás los detalles de la llave por mensaje la mañana de tu llegada."
+      },
+      q4: {
+        q: "¿Puedo dejar el equipaje antes de las 15:00 o después de las 11:00?",
+        a: "Sí — puedes dejarlo desde el mediodía el día de llegada, y dejarlo hasta tu ferry el día de salida. Sin coste extra."
+      },
+      q5: {
+        q: "¿Hay aparcamiento?",
+        a: "Aparcamiento público gratuito en la calle. Aliki tiene sitios de sobra, excepto las dos primeras semanas de agosto."
+      },
+      q6: {
+        q: "¿La playa es de arena?",
+        a: "La costa frente a Sea Tree es de piedra natural — espectacular al atardecer, poco cómoda descalzo. Para arena: la playa principal de Aliki está a 1 minuto, Piso Aliki a 5, Agios Nikolaos a 10 minutos en coche."
+      },
+      q7: {
+        q: "¿Política de mascotas?",
+        a: "Lo sentimos — no se admiten mascotas. Es una decisión de limpieza y alergias para futuros huéspedes."
+      },
+      q8: {
+        q: "¿A qué distancia está la vida nocturna?",
+        a: "Naoussa, el centro nocturno de la isla, está a 22 km / 25 minutos en coche. Parikia a 12 km / 15 minutos. Aliki es deliberadamente tranquilo — tavernas abiertas hasta tarde, pero sin discotecas."
+      },
+      q9: {
+        q: "¿Cuál es la velocidad del WiFi?",
+        a: "Starlink: típicamente 150–250 Mbps de bajada, 15–30 Mbps de subida, latencia inferior a 60 ms. Suficiente para videollamadas y teletrabajo."
+      },
+      q10: {
+        q: "¿Hay carga de coche eléctrico cerca?",
+        a: "El cargador rápido más cercano está en Parikia, a 12 km / 15 minutos. Hay algunos cargadores AC Nivel 2 en hoteles de Naoussa. Todavía no hay cargador público en Aliki."
+      },
+      q11: {
+        q: "¿Farmacia y atención médica?",
+        a: "Farmacia pequeña en Aliki, a 3 minutos a pie. Farmacias más grandes y centro médico en Parikia. El Centro de Salud de Paros (urgencias 24/7) está a 15 minutos en coche."
+      },
+      q12: {
+        q: "¿El supermercado acepta tarjeta?",
+        a: "Sí — tanto el supermercado de Aliki como los más grandes de Parikia aceptan tarjetas. Lleva algo de efectivo para tavernas pequeñas y algún kiosco."
+      }
     },
 
     // Booking/Contact
@@ -589,6 +699,61 @@ const translations = {
       days: ["Κυρ", "Δευ", "Τρί", "Τετ", "Πέμ", "Παρ", "Σάβ"]
     },
 
+    // FAQ
+    faq: {
+      label: "Συχνές Ερωτήσεις",
+      title: "Οι απαντήσεις, με μια ματιά",
+      subtitle: "Ό,τι ρωτούν οι επισκέπτες πριν κλείσουν — σε ένα σημείο.",
+      q1: {
+        q: "Πώς φτάνω από το λιμάνι της Πάρου στην Αλυκή;",
+        a: "Με αυτοκίνητο, 15 λεπτά. Με λεωφορείο, 25–35 λεπτά με τη γραμμή ΚΤΕΛ Πάρου, στάση στην Αλυκή. Στο λιμάνι υπάρχουν ταξί. Αν έρχεστε αεροπορικώς, το αεροδρόμιο της Πάρου είναι 5 λεπτά από το Sea Tree."
+      },
+      q2: {
+        q: "Το Sea Tree είναι κατάλληλο για οικογένειες;",
+        a: "Ναι. Δύο υπνοδωμάτια για έως τέσσερα άτομα· η βεράντα είναι φραγμένη από τη θάλασσα ώστε τα παιδιά να παίζουν ήρεμα. Φέρτε παπούτσια θαλάσσης — η ακτή μπροστά είναι βραχώδης· η αμμώδης παραλία της Αλυκής απέχει 1 λεπτό με τα πόδια."
+      },
+      q3: {
+        q: "Πώς γίνεται το check-in;",
+        a: "Self check-in από τις 15:00. Ο Γιώργος ή ο βοηθός του μπορεί να σας καλωσορίσει προσωπικά αν το ζητήσετε· διαφορετικά, θα λάβετε οδηγίες το πρωί της άφιξης."
+      },
+      q4: {
+        q: "Μπορώ να αφήσω τις αποσκευές πριν τις 15:00 ή μετά τις 11:00;",
+        a: "Ναι — μπορείτε να τις αφήσετε από το μεσημέρι της άφιξης και μέχρι το πλοίο σας την ημέρα της αναχώρησης. Χωρίς επιπλέον χρέωση."
+      },
+      q5: {
+        q: "Υπάρχει πάρκινγκ;",
+        a: "Δωρεάν δημόσιο πάρκινγκ στον δρόμο. Η Αλυκή έχει αρκετές θέσεις, εκτός από τις δύο πρώτες εβδομάδες του Αυγούστου."
+      },
+      q6: {
+        q: "Η παραλία είναι αμμώδης;",
+        a: "Η ακτή ακριβώς μπροστά από το Sea Tree είναι φυσική πέτρα — εντυπωσιακή στο ηλιοβασίλεμα, δύσκολη ξυπόλυτα. Για άμμο: η κυρίως παραλία της Αλυκής είναι 1 λεπτό, η Πίσω Αλυκή 5 λεπτά, ο Άγιος Νικόλαος 10 λεπτά με αυτοκίνητο."
+      },
+      q7: {
+        q: "Επιτρέπονται τα κατοικίδια;",
+        a: "Δυστυχώς όχι. Είναι απόφαση για καθαριότητα και αλλεργίες των επόμενων επισκεπτών."
+      },
+      q8: {
+        q: "Πόσο μακριά είναι η νυχτερινή διασκέδαση;",
+        a: "Η Νάουσα, το κέντρο της νυχτερινής ζωής, απέχει 22 χλμ / 25 λεπτά με αυτοκίνητο. Η Παροικιά 12 χλμ / 15 λεπτά. Η Αλυκή είναι σκόπιμα ήσυχη — οι ταβέρνες μένουν μέχρι αργά, αλλά χωρίς κλαμπ."
+      },
+      q9: {
+        q: "Πόση είναι η ταχύτητα του WiFi;",
+        a: "Starlink: συνήθως 150–250 Mbps κατέβασμα, 15–30 Mbps ανέβασμα, latency κάτω από 60 ms. Αρκετό για video κλήσεις και απομακρυσμένη εργασία."
+      },
+      q10: {
+        q: "Υπάρχει φόρτιση ηλεκτρικών αυτοκινήτων κοντά;",
+        a: "Ο πλησιέστερος ταχυφορτιστής είναι στην Παροικιά, 12 χλμ / 15 λεπτά. Υπάρχουν λίγοι AC φορτιστές Επιπέδου 2 σε ξενοδοχεία της Νάουσας. Δεν υπάρχει ακόμη δημόσιος φορτιστής στην Αλυκή."
+      },
+      q11: {
+        q: "Φαρμακείο και ιατρική βοήθεια;",
+        a: "Μικρό φαρμακείο στην Αλυκή, 3 λεπτά με τα πόδια. Μεγαλύτερα φαρμακεία και ιατρικό κέντρο στην Παροικιά. Το Κέντρο Υγείας Πάρου (εφημερεία 24/7) απέχει 15 λεπτά με αυτοκίνητο."
+      },
+      q12: {
+        q: "Το σούπερ μάρκετ δέχεται κάρτα;",
+        a: "Ναι — και το σούπερ μάρκετ στην Αλυκή και τα μεγαλύτερα στην Παροικιά δέχονται κάρτες. Κρατήστε λίγα μετρητά για μικρότερες ταβέρνες και περίπτερα."
+      }
+    },
+
     // Booking/Contact
     booking: {
       label: "Κλείστε τη Διαμονή σας",
@@ -794,6 +959,61 @@ const translations = {
       months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
         "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
       days: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
+    },
+
+    // FAQ
+    faq: {
+      label: "Questions Fréquentes",
+      title: "Les réponses, d'un coup d'œil",
+      subtitle: "Ce que les voyageurs demandent avant de réserver — au même endroit.",
+      q1: {
+        q: "Comment rejoindre Aliki depuis le port de Paros ?",
+        a: "En voiture, 15 minutes. En bus, 25–35 minutes sur la ligne KTEL Paros avec arrêt à Aliki. Des taxis sont disponibles au port. En avion, l'aéroport de Paros est à 5 minutes de Sea Tree."
+      },
+      q2: {
+        q: "Sea Tree est-il adapté aux familles ?",
+        a: "Oui. Deux chambres pour quatre personnes ; la terrasse est entièrement clôturée côté mer pour que les enfants jouent sereinement. Prévoyez des chaussures d'eau — la côte immédiate est rocheuse ; la plage de sable d'Aliki est à 1 minute à pied."
+      },
+      q3: {
+        q: "Comment se passe l'arrivée ?",
+        a: "Auto check-in dès 15:00. Yorgos ou son assistant vous accueillera en personne sur demande ; sinon, vous recevrez les infos de clé par message le matin de l'arrivée."
+      },
+      q4: {
+        q: "Puis-je déposer mes bagages avant 15:00 ou après 11:00 ?",
+        a: "Oui — vous pouvez les déposer dès midi le jour de l'arrivée, et les laisser jusqu'à votre ferry le jour du départ. Sans frais supplémentaires."
+      },
+      q5: {
+        q: "Y a-t-il un parking ?",
+        a: "Stationnement public gratuit dans la rue. Aliki a largement assez de places, sauf les deux premières semaines d'août."
+      },
+      q6: {
+        q: "La plage est-elle de sable ?",
+        a: "La côte juste devant Sea Tree est en pierre naturelle — superbe au coucher du soleil, peu confortable pieds nus. Pour du sable : la plage principale d'Aliki est à 1 minute, Piso Aliki à 5, Agios Nikolaos à 10 minutes en voiture."
+      },
+      q7: {
+        q: "Animaux acceptés ?",
+        a: "Désolé — pas d'animaux. C'est un choix lié à l'entretien et aux allergies des prochains voyageurs."
+      },
+      q8: {
+        q: "La vie nocturne, c'est où ?",
+        a: "Naoussa, le cœur nocturne de l'île, est à 22 km / 25 minutes en voiture. Parikia à 12 km / 15 minutes. Aliki est volontairement calme — les tavernes ferment tard, mais pas de clubs."
+      },
+      q9: {
+        q: "Quelle est la vitesse du WiFi ?",
+        a: "Starlink : généralement 150–250 Mbps en téléchargement, 15–30 Mbps en envoi, latence sous 60 ms. Suffisant pour les visios et le télétravail."
+      },
+      q10: {
+        q: "Y a-t-il des bornes de recharge voiture électrique ?",
+        a: "La borne rapide la plus proche est à Parikia, 12 km / 15 minutes. Quelques bornes AC Niveau 2 dans les hôtels de Naoussa. Pas encore de borne publique à Aliki."
+      },
+      q11: {
+        q: "Pharmacie et soins médicaux ?",
+        a: "Petite pharmacie à Aliki, 3 minutes à pied. Des pharmacies plus grandes et un centre médical à Parikia. Le Centre de santé de Paros (urgences 24/7) est à 15 minutes en voiture."
+      },
+      q12: {
+        q: "Le supermarché accepte-t-il la carte ?",
+        a: "Oui — aussi bien le marché d'Aliki que les plus grands de Parikia acceptent les cartes. Gardez un peu de liquide pour les petites tavernes et les kiosques."
+      }
     },
 
     // Booking/Contact
