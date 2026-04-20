@@ -1,0 +1,45 @@
+{
+  "id": "66326601789c",
+  "key": "manual_663266",
+  "name": "manual_663266",
+  "claim": "Every <img> must have explicit width and height attributes to keep CLS=0",
+  "conditions": [
+    "attributes",
+    "cls",
+    "every",
+    "explicit",
+    "height",
+    "img",
+    "keep",
+    "width"
+  ],
+  "evidence_ids": [
+    "2026-04-20T22:17:54.295757"
+  ],
+  "cluster_size": 1,
+  "canonical_salience": 8.0,
+  "staged_at": "2026-04-20T22:17:54.295757",
+  "status": "accepted",
+  "decisions": [
+    {
+      "ts": "2026-04-20T22:17:54.295757",
+      "action": "staged",
+      "reviewer": "learn"
+    },
+    {
+      "ts": "2026-04-20T22:17:54.402442",
+      "action": "graduated",
+      "reviewer": "learn.py",
+      "notes": "layout stability convention in Sea Tree PWA \u2014 tested in Jan 2026 Lighthouse optimization pass",
+      "provisional": false,
+      "evidence_snapshot": [
+        "2026-04-20T22:17:54.295757"
+      ],
+      "lessons_sha": "6b57b4872cd2"
+    }
+  ],
+  "rejection_count": 0,
+  "accepted_at": "2026-04-20T22:17:54.402425",
+  "reviewer": "learn.py",
+  "rationale": "layout stability convention in Sea Tree PWA \u2014 tested in Jan 2026 Lighthouse optimization pass"
+}

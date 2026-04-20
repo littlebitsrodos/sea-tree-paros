@@ -16,3 +16,4 @@
 ### 2026-04
 
 - Always serialize timestamps in UTC to avoid cross-region comparison bugs  <!-- status=accepted confidence=0.46 evidence=1 id=lesson_422695ae5b2d -->
+- Every <img> must have explicit width and height attributes to keep CLS=0  <!-- status=accepted confidence=0.46 evidence=1 id=lesson_66326601789c -->
