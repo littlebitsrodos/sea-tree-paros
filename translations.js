@@ -5,6 +5,16 @@
 
 const translations = {
   en: {
+    // Meta / head tags (used by the per-locale build step)
+    meta: {
+      title: "Sea Tree | Vacation Rental in Paros, Greece",
+      description: "Sea Tree — a unique vacation rental in Aliki Beach, Paros, Greece. The former legendary Romantica disco bar, transformed into a serene island retreat.",
+      ogTitle: "Sea Tree | Vacation Rental in Paros, Greece",
+      ogDescription: "From dance floor to dream stay — Sea Tree, a unique vacation rental in Aliki Beach, Paros. The former legendary Romantica disco bar, transformed into a serene island retreat.",
+      twitterTitle: "Sea Tree | Paros, Greece",
+      twitterDescription: "From dance floor to dream stay — Sea Tree, vacation rental in Aliki Beach, Paros."
+    },
+
     // Accessibility
     a11y: {
       skipToMain: "Skip to main content"
@@ -180,6 +190,16 @@ const translations = {
   },
 
   es: {
+    // Meta
+    meta: {
+      title: "Sea Tree | Alquiler Vacacional en Paros, Grecia",
+      description: "Sea Tree — un alquiler vacacional único en la playa de Aliki, Paros, Grecia. El legendario disco bar Romantica, transformado en un refugio sereno de la isla.",
+      ogTitle: "Sea Tree | Alquiler Vacacional en Paros, Grecia",
+      ogDescription: "De la pista de baile al sueño — Sea Tree, un alquiler vacacional único en Aliki, Paros. El legendario disco bar Romantica, ahora un refugio sereno.",
+      twitterTitle: "Sea Tree | Paros, Grecia",
+      twitterDescription: "De la pista de baile al sueño — Sea Tree, alquiler vacacional en Aliki, Paros."
+    },
+
     // Accessibility
     a11y: {
       skipToMain: "Saltar al contenido principal"
@@ -355,6 +375,16 @@ const translations = {
   },
 
   el: {
+    // Meta
+    meta: {
+      title: "Sea Tree | Εξοχική Κατοικία στην Πάρο, Ελλάδα",
+      description: "Sea Tree — μια μοναδική εξοχική κατοικία στην Αλυκή, Πάρος, Ελλάδα. Το θρυλικό disco bar Romantica, μεταμορφωμένο σε γαλήνιο νησιωτικό καταφύγιο.",
+      ogTitle: "Sea Tree | Εξοχική Κατοικία στην Πάρο, Ελλάδα",
+      ogDescription: "Από την πίστα χορού στο όνειρο — Sea Tree, μοναδική εξοχική κατοικία στην Αλυκή, Πάρο. Το θρυλικό disco bar Romantica, τώρα γαλήνιο καταφύγιο.",
+      twitterTitle: "Sea Tree | Πάρος, Ελλάδα",
+      twitterDescription: "Από την πίστα χορού στο όνειρο — Sea Tree, εξοχική κατοικία στην Αλυκή, Πάρος."
+    },
+
     // Accessibility
     a11y: {
       skipToMain: "Μετάβαση στο κύριο περιεχόμενο"
@@ -530,6 +560,16 @@ const translations = {
   },
 
   fr: {
+    // Meta
+    meta: {
+      title: "Sea Tree | Location de Vacances à Paros, Grèce",
+      description: "Sea Tree — une location de vacances unique à la plage d'Aliki, Paros, Grèce. Le légendaire disco-bar Romantica, transformé en refuge insulaire serein.",
+      ogTitle: "Sea Tree | Location de Vacances à Paros, Grèce",
+      ogDescription: "De la piste de danse au rêve — Sea Tree, location de vacances unique à Aliki, Paros. Le légendaire disco-bar Romantica, devenu refuge paisible.",
+      twitterTitle: "Sea Tree | Paros, Grèce",
+      twitterDescription: "De la piste de danse au rêve — Sea Tree, location de vacances à Aliki, Paros."
+    },
+
     // Accessibility
     a11y: {
       skipToMain: "Passer au contenu principal"

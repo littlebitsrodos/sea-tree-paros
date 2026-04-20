@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node (for build_locales.py → translations.js bridge)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild per-locale HTMLs from translations.js
+        run: python3 scripts/build_locales.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

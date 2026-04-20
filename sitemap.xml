@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://seatree.gr/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/"/>
   </url>
   <url>
-    <loc>https://seatree.gr/#story</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://seatree.gr/#gallery</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://seatree.gr/#amenities</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seatree.gr/#location</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seatree.gr/#availability</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://seatree.gr/es/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/"/>
   </url>
   <url>
-    <loc>https://seatree.gr/#contact</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://seatree.gr/el/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/"/>
+  </url>
+  <url>
+    <loc>https://seatree.gr/fr/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/"/>
   </url>
 </urlset>

@@ -4,7 +4,9 @@
 // =====================================================
 
 // ----- State Management -----
-let currentLang = 'en';
+// Locale is driven by the URL: /, /en/, /es/, /el/, /fr/. The <html lang="..">
+// attribute is set per locale at build time, so we read from there on init.
+let currentLang = (document.documentElement.lang || 'en').toLowerCase();
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let bookedDates = []; // Will be populated from iCal
@@ -93,16 +95,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ----- Language Switcher -----
+// URL-based: each locale lives at its own path (/, /es/, /el/, /fr/).
+// Click navigates; the destination already has the correct lang in markup.
 function initLanguageSwitcher() {
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            setLanguage(lang);
-
-            // Update active state
-            langButtons.forEach(b => b.classList.remove('active'));
+        const lang = btn.dataset.lang;
+        const path = lang === 'en' ? '/' : `/${lang}/`;
+        btn.setAttribute('data-href', path);
+        if (lang === currentLang) {
             btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        btn.addEventListener('click', () => {
+            // Preserve the current section anchor when navigating between locales
+            window.location.href = path + (window.location.hash || '');
         });
     });
 }
