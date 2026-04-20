@@ -2,3 +2,7 @@ lighthouse-*.json
 .DS_Store
 *.eml
 
+# Python bytecode (agentic-stack tools)
+__pycache__/
+*.pyc
+
