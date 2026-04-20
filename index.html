@@ -133,9 +133,8 @@
     rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Preload Hero Image -->
-  <link rel="preload" as="image" href="images/optimized/kitchen-dining.webp"
-    imagesrcset="images/optimized/kitchen-dining-600.jpg 600w, images/optimized/kitchen-dining.webp 1200w"
-    imagesizes="(max-width: 600px) 100vw, 100vw">
+  <link rel="preload" as="image" href="images/optimized/kitchen-dining-600.jpg" media="(max-width: 600px)">
+  <link rel="preload" as="image" href="images/optimized/kitchen-dining.webp" media="(min-width: 601px)">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -175,10 +174,11 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <img src="images/optimized/kitchen-dining.webp"
-      srcset="images/optimized/kitchen-dining-600.jpg 600w, images/optimized/kitchen-dining.webp 1200w"
-      sizes="(max-width: 600px) 100vw, 100vw" width="1200" height="900" alt="Romantica Blue Villa" class="hero-bg"
-      fetchpriority="high">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/optimized/kitchen-dining-600.jpg">
+      <img src="images/optimized/kitchen-dining.webp" alt="Romantica Blue Villa" width="1200" height="900"
+        class="hero-bg" fetchpriority="high">
+    </picture>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 data-translate="hero.title">Romantica Blue</h1>

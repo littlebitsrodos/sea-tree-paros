@@ -1,4 +1,4 @@
-const CACHE_NAME = 'romantica-blue-v1';
+const CACHE_NAME = 'romantica-blue-v2';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
