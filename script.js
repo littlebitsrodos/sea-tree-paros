@@ -48,9 +48,8 @@ function getPaymentLink(checkInDate, nights) {
 
 // ----- External Calendar Config -----
 const ICAL_URLS = [
-    // Placeholder URLs - Replace with actual iCal links from Airbnb/Booking
-    'https://www.airbnb.com/calendar/ical/YOUR_AIRBNB_ID.ics?s=8d58c9735a29735d134676527ba56779',
-    'https://admin.booking.com/hotel/hoteladmin/ical/booking/export.html?id=YOUR_BOOKING_ID&token=YOUR_TOKEN'
+    'https://www.airbnb.co.uk/calendar/ical/1659626910469787873.ics?t=27432fdc07c54e9bb8e3ea8622b9fac0',
+    'https://ical.booking.com/v1/export?t=5cafb294-ac4f-4cff-be12-ab4f933ad203'
 ];
 
 // CORS Proxy (Use a public one for demo, or own Worker for production)

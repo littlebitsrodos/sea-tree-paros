@@ -7,7 +7,7 @@
 
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io">
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://formspree.io https://www.airbnb.co.uk https://ical.booking.com; form-action 'self' https://formspree.io">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
@@ -443,7 +443,7 @@
         </article>
       </div>
       <p class="reviews-more">
-        <a href="#" rel="noopener noreferrer" class="review-link" data-translate="reviews.moreAirbnb">Voir plus sur Airbnb →</a>
+        <a href="https://www.airbnb.com/rooms/1659626910469787873" target="_blank" rel="noopener noreferrer" class="review-link" data-translate="reviews.moreAirbnb">Voir plus sur Airbnb →</a>
       </p>
     </div>
   </section>
@@ -782,14 +782,16 @@
 
         <div class="booking-links">
           <h3 data-translate="booking.platformsTitle">Ou Réservez Directement</h3>
-          <a href="#" class="booking-platform" rel="noopener noreferrer">
+          <a href="https://www.airbnb.com/rooms/1659626910469787873" class="booking-platform" target="_blank"
+            rel="noopener noreferrer">
             <div class="booking-platform-logo airbnb">Airbnb</div>
             <div>
               <strong data-translate="booking.airbnb">Réserver sur Airbnb</strong>
               <p style="margin: 0; font-size: 0.9rem;">Instant booking available</p>
             </div>
           </a>
-          <a href="#" class="booking-platform" rel="noopener noreferrer">
+          <a href="https://www.booking.com/hotel/gr/aliki-seafront-luxury-apartment.en-gb.html"
+            class="booking-platform" target="_blank" rel="noopener noreferrer">
             <div class="booking-platform-logo booking">B.com</div>
             <div>
               <strong data-translate="booking.bookingcom">Réserver sur Booking.com</strong>
@@ -822,8 +824,8 @@
         </div>
         <div>
           <h3 data-translate="footer.contactTitle">Contact</h3>
-          <p data-translate="footer.phone">+30 XXX XXX XXXX</p>
-          <p data-translate="footer.email">info@seatree.gr</p>
+          <p><a href="tel:+306973286811" data-translate="footer.phone">+30 697 3286 811</a></p>
+          <p><a href="mailto:info@seatree.gr" data-translate="footer.email">info@seatree.gr</a></p>
           <p data-translate="footer.address">Plage d'Aliki, Paros 844 00, Grèce</p>
         </div>
       </div>

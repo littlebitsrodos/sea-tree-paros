@@ -191,7 +191,7 @@ const translations = {
       about: "A unique vacation rental in Paros, Greece — where disco history meets island serenity.",
       quickLinks: "Quick Links",
       contactTitle: "Contact",
-      phone: "+30 XXX XXX XXXX",
+      phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Aliki Beach, Paros 844 00, Greece",
       copyright: "© 2026 Sea Tree. All rights reserved."
@@ -385,7 +385,7 @@ const translations = {
       about: "Un alquiler vacacional único en Paros, Grecia — donde la historia disco se encuentra con la serenidad isleña.",
       quickLinks: "Enlaces Rápidos",
       contactTitle: "Contacto",
-      phone: "+30 XXX XXX XXXX",
+      phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Playa de Aliki, Paros 844 00, Grecia",
       copyright: "© 2026 Sea Tree. Todos los derechos reservados."
@@ -579,7 +579,7 @@ const translations = {
       about: "Μοναδικό ενοικιαζόμενο κατάλυμα στην Πάρο, Ελλάδα — όπου η disco ιστορία συναντά τη νησιώτικη γαλήνη.",
       quickLinks: "Γρήγοροι Σύνδεσμοι",
       contactTitle: "Επικοινωνία",
-      phone: "+30 XXX XXX XXXX",
+      phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
       copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος."
@@ -773,7 +773,7 @@ const translations = {
       about: "Une location de vacances unique à Paros, Grèce — où l'histoire disco rencontre la sérénité insulaire.",
       quickLinks: "Liens Rapides",
       contactTitle: "Contact",
-      phone: "+30 XXX XXX XXXX",
+      phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
       copyright: "© 2026 Sea Tree. Tous droits réservés."
