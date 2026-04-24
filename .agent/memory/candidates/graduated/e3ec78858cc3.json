@@ -1,0 +1,61 @@
+{
+  "id": "e3ec78858cc3",
+  "key": "manual_e3ec78",
+  "name": "manual_e3ec78",
+  "claim": "Before trusting a commit's scope from its title, run 'git show --stat <sha>' \u2014 the title states intent, not actual changes. A small-sounding title with stats showing 1000+ line changes or touching files outside the title's scope signals a stealth refactor.",
+  "conditions": [
+    "actual",
+    "before",
+    "changes",
+    "commit",
+    "files",
+    "git",
+    "intent",
+    "line",
+    "outside",
+    "refactor",
+    "run",
+    "scope",
+    "sha",
+    "show",
+    "showing",
+    "signals",
+    "small-sounding",
+    "stat",
+    "states",
+    "stats",
+    "stealth",
+    "title",
+    "touching",
+    "trusting"
+  ],
+  "evidence_ids": [
+    "2026-04-22T01:08:39.578838"
+  ],
+  "cluster_size": 1,
+  "canonical_salience": 8.0,
+  "staged_at": "2026-04-22T01:08:39.578838",
+  "status": "accepted",
+  "decisions": [
+    {
+      "ts": "2026-04-22T01:08:39.578838",
+      "action": "staged",
+      "reviewer": "learn"
+    },
+    {
+      "ts": "2026-04-22T01:08:39.681214",
+      "action": "graduated",
+      "reviewer": "learn.py",
+      "notes": "Commit b99796f on this repo was titled 'feat: sticky mobile booking bar' but its stat showed styles.css \u00b12530 lines and a 132-line index.html restructure \u2014 it was actually a full LUXE redesign merge that deleted the .animate-in CSS rule, leaving the site shipping with all 12 sections permanently invisible (opacity:0) for ~2 months. Nobody caught it because everyone trusted the commit title. The stat line would have flagged it in 5 seconds.",
+      "provisional": false,
+      "evidence_snapshot": [
+        "2026-04-22T01:08:39.578838"
+      ],
+      "lessons_sha": "d4606aef68c5"
+    }
+  ],
+  "rejection_count": 0,
+  "accepted_at": "2026-04-22T01:08:39.681195",
+  "reviewer": "learn.py",
+  "rationale": "Commit b99796f on this repo was titled 'feat: sticky mobile booking bar' but its stat showed styles.css \u00b12530 lines and a 132-line index.html restructure \u2014 it was actually a full LUXE redesign merge that deleted the .animate-in CSS rule, leaving the site shipping with all 12 sections permanently invisible (opacity:0) for ~2 months. Nobody caught it because everyone trusted the commit title. The stat line would have flagged it in 5 seconds."
+}
