@@ -1,6 +1,17 @@
 lighthouse-*.json
+lighthouse-*.html
+psi-*.json
 .DS_Store
 *.eml
+
+# Session-local audit tooling
+.lh-chrome/
+.lh-sweep.sh
+lh-sweep.log
+lh-sweep.err
+
+# Claude Code worktrees
+.claude/worktrees/
 
 # Python bytecode (agentic-stack tools)
 __pycache__/
