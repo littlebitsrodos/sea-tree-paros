@@ -6,7 +6,7 @@
 /* ----- CSS Variables ----- */
 :root {
   /* Colors - Earthy, Grounded Palette */
-  --color-terracotta: #9A6E50;
+  --color-terracotta: #8B5F44;
   --color-terracotta-light: #B8886B;
   --color-sand: #E8DCC4;
   --color-sand-light: #F7F3ED;
@@ -358,13 +358,11 @@ section:nth-child(even) {
   100% {
     transform: scale(1);
     opacity: 0.6;
-    border-color: rgba(255, 255, 255, 0.3);
   }
 
   50% {
     transform: scale(1.6);
     opacity: 1;
-    border-color: rgba(255, 255, 255, 0.6);
   }
 }
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sea-tree-v7';
+const CACHE_NAME = 'sea-tree-v8';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -6,8 +6,7 @@ const ASSETS_TO_CACHE = [
     './script.js',
     './translations.js',
     './offline.html',
-    './favicon.svg',
-    './fonts.css'
+    './favicon.svg'
 ];
 
 // Install Event - Cache Core Assets

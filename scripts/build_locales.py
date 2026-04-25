@@ -185,10 +185,20 @@ def absolutize_paths(html):
     html = re.sub(
         r'\b(href|src)="(?!https?:|/|#)(fonts/[^"]+)"', r'\1="/\2"', html
     )
-    # srcset in <source>
-    html = re.sub(
-        r'\bsrcset="(?!https?:|/)(images/[^"]+)"', r'srcset="/\1"', html
-    )
+    # srcset in <source> / <img> — may contain multiple comma-separated entries.
+    def _absolutize_srcset(match):
+        entries = []
+        for entry in match.group(1).split(","):
+            entry = entry.strip()
+            if not entry:
+                continue
+            url, _, descriptor = entry.partition(" ")
+            if not url.startswith(("http:", "https:", "/", "data:")):
+                url = "/" + url
+            entries.append(f"{url} {descriptor}".strip())
+        return f'srcset="{", ".join(entries)}"'
+
+    html = re.sub(r'\bsrcset="([^"]+)"', _absolutize_srcset, html)
     # manifest
     html = re.sub(
         r'\bhref="(?!https?:|/|#)(manifest\.json)"', r'href="/\1"', html
