@@ -1,0 +1,62 @@
+{
+  "id": "e28c85b468ad",
+  "key": "manual_e28c85",
+  "name": "manual_e28c85",
+  "claim": "When server-renders per-locale HTML, any DOMContentLoaded init that walks [data-translate] must seed from document.documentElement.lang \u2014 never hardcode a language string. Two writers to the same DOM state: the second one silently wins.",
+  "conditions": [
+    "any",
+    "data-translate",
+    "document",
+    "documentelement",
+    "dom",
+    "domcontentloaded",
+    "hardcode",
+    "html",
+    "init",
+    "lang",
+    "language",
+    "never",
+    "one",
+    "per-locale",
+    "same",
+    "second",
+    "seed",
+    "server-renders",
+    "silently",
+    "state",
+    "string",
+    "two",
+    "walks",
+    "wins",
+    "writers"
+  ],
+  "evidence_ids": [
+    "2026-04-24T19:58:14.872795"
+  ],
+  "cluster_size": 1,
+  "canonical_salience": 8.0,
+  "staged_at": "2026-04-24T19:58:14.872795",
+  "status": "accepted",
+  "decisions": [
+    {
+      "ts": "2026-04-24T19:58:14.872795",
+      "action": "staged",
+      "reviewer": "learn"
+    },
+    {
+      "ts": "2026-04-24T19:58:14.893662",
+      "action": "graduated",
+      "reviewer": "learn.py",
+      "notes": "Sea Tree i18n bug (Apr 2026): build_locales.py pre-translated /es/, /el/, /fr/ HTML, but script.js ran setLanguage('en') on DOMContentLoaded and reverted every translated element back to English. The URL changed on click but the content snapped to EN, so the language switcher looked broken. Root cause is the hardcoded 'en', not the switcher.",
+      "provisional": false,
+      "evidence_snapshot": [
+        "2026-04-24T19:58:14.872795"
+      ],
+      "lessons_sha": "6d3a14ad805e"
+    }
+  ],
+  "rejection_count": 0,
+  "accepted_at": "2026-04-24T19:58:14.893660",
+  "reviewer": "learn.py",
+  "rationale": "Sea Tree i18n bug (Apr 2026): build_locales.py pre-translated /es/, /el/, /fr/ HTML, but script.js ran setLanguage('en') on DOMContentLoaded and reverted every translated element back to English. The URL changed on click but the content snapped to EN, so the language switcher looked broken. Root cause is the hardcoded 'en', not the switcher."
+}
