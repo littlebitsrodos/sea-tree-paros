@@ -42,12 +42,12 @@ const translations = {
     // Story Section
     story: {
       label: "Our Story",
-      title: "Where the Party Vibes Became Quiet Mornings",
-      p1: "This blue house was once the Romantica disco bar — the heartbeat of Paros nightlife where islanders and travelers danced until sunrise.",
+      title: "From Late Nights to Slow Mornings",
+      p1: "This blue house was once the Romantica disco bar — for two decades, the heartbeat of Paros nightlife, where islanders and travelers danced until sunrise.",
       p2: "Today, those same walls hold a different rhythm. Morning light through white curtains. Coffee on the balcony. Stone floors cool underfoot. The soul of Romantica lives on — in the sound of waves, the salt air, and the slow pace of island life.",
       highlight: {
         title: "A Touch of History",
-        text: "Ask the locals about Romantica — they'll smile and share stories of the island's best parties. Now it's your turn to create quieter memories."
+        text: "Ask the locals about Romantica — they'll smile and share stories of the island's best parties. Now the loudest sound is the sea."
       }
     },
 
@@ -227,12 +227,12 @@ const translations = {
     // Story Section
     story: {
       label: "Nuestra Historia",
-      title: "Donde el Ritmo Se Convirtió en Mañanas Tranquilas",
-      p1: "Esta casa azul fue una vez la discoteca Romantica — el corazón de la vida nocturna de Paros donde isleños y viajeros bailaban hasta el amanecer.",
+      title: "De Noches Largas a Mañanas Lentas",
+      p1: "Esta casa azul fue una vez la discoteca Romantica — durante dos décadas, el corazón de la vida nocturna de Paros, donde isleños y viajeros bailaban hasta el amanecer.",
       p2: "Hoy, esas mismas paredes tienen un ritmo diferente. Luz matutina a través de cortinas blancas. Café en el balcón. Suelos de piedra frescos bajo los pies. El alma de Romantica sigue viva — en el sonido de las olas, el aire salado y el ritmo lento de la vida isleña.",
       highlight: {
         title: "Un Toque de Historia",
-        text: "Pregunta a los locales sobre Romantica — sonreirán y compartirán historias de las mejores fiestas de la isla. Ahora es tu turno de crear recuerdos más tranquilos."
+        text: "Pregunta a los locales sobre Romantica — sonreirán y compartirán historias de las mejores fiestas de la isla. Ahora el sonido más fuerte es el del mar."
       }
     },
 
@@ -412,12 +412,12 @@ const translations = {
     // Story Section
     story: {
       label: "Η Ιστορία μας",
-      title: "Όπου ο Ρυθμός Έγινε Ήσυχα Πρωινά",
-      p1: "Αυτό το μπλε σπίτι ήταν κάποτε το disco bar Romantica — η καρδιά της νυχτερινής ζωής της Πάρου όπου ντόπιοι και ταξιδιώτες χόρευαν μέχρι την ανατολή.",
+      title: "Από τα Ξενύχτια στα Αργά Πρωινά",
+      p1: "Αυτό το μπλε σπίτι ήταν κάποτε το disco bar Romantica — για δύο δεκαετίες, η καρδιά της νυχτερινής ζωής της Πάρου, όπου ντόπιοι και ταξιδιώτες χόρευαν μέχρι την ανατολή.",
       p2: "Σήμερα, οι ίδιοι τοίχοι έχουν έναν διαφορετικό ρυθμό. Πρωινό φως μέσα από λευκές κουρτίνες. Καφές στο μπαλκόνι. Πέτρινα πατώματα δροσερά κάτω από τα πόδια. Η ψυχή της Romantica ζει ακόμα — στον ήχο των κυμάτων, τον αλμυρό αέρα και τον αργό ρυθμό της νησιώτικης ζωής.",
       highlight: {
         title: "Μια Πινελιά Ιστορίας",
-        text: "Ρωτήστε τους ντόπιους για τη Romantica — θα χαμογελάσουν και θα μοιραστούν ιστορίες από τα καλύτερα πάρτι του νησιού. Τώρα είναι η σειρά σας να δημιουργήσετε πιο ήσυχες αναμνήσεις."
+        text: "Ρωτήστε τους ντόπιους για τη Romantica — θα χαμογελάσουν και θα μοιραστούν ιστορίες από τα καλύτερα πάρτι του νησιού. Τώρα ο πιο δυνατός ήχος είναι αυτός της θάλασσας."
       }
     },
 
@@ -597,12 +597,12 @@ const translations = {
     // Story Section
     story: {
       label: "Notre Histoire",
-      title: "Où les Rythmes Sont Devenus Matins Paisibles",
-      p1: "Cette maison bleue était autrefois le disco-bar Romantica — le cœur de la vie nocturne de Paros où les insulaires et les voyageurs dansaient jusqu'au lever du soleil.",
+      title: "Des Nuits Tardives aux Matins Lents",
+      p1: "Cette maison bleue était autrefois le disco-bar Romantica — pendant deux décennies, le cœur de la vie nocturne de Paros, où les insulaires et les voyageurs dansaient jusqu'au lever du soleil.",
       p2: "Aujourd'hui, ces mêmes murs ont un rythme différent. Lumière du matin à travers les rideaux blancs. Café sur le balcon. Sols en pierre fraîche sous les pieds. L'âme de Romantica vit toujours — dans le bruit des vagues, l'air salé et le rythme lent de la vie insulaire.",
       highlight: {
         title: "Une Touche d'Histoire",
-        text: "Demandez aux locaux à propos de Romantica — ils souriront et partageront des histoires des meilleures fêtes de l'île. C'est maintenant à votre tour de créer des souvenirs plus paisibles."
+        text: "Demandez aux locaux à propos de Romantica — ils souriront et partageront des histoires des meilleures fêtes de l'île. Maintenant, le bruit le plus fort est celui de la mer."
       }
     },
 
