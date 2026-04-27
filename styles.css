@@ -617,8 +617,8 @@ section:nth-child(even) {
   background: rgba(61, 90, 110, 0.1);
 }
 
-/* Limit visible grid to first 9 items; rest reachable via "View all photos" lightbox */
-.gallery-grid > .gallery-item:nth-child(n+10) {
+/* Limit visible grid to first 5 items (1 hero 2x2 + 4 thumbs in 2 rows); rest reachable via "View all photos" lightbox */
+.gallery-grid > .gallery-item:nth-child(n+6) {
   display: none;
 }
 
