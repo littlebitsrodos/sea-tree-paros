@@ -108,7 +108,7 @@ Skip it and the system is just files on disk.
 
 - Browser tests live in `tests/`. Stack: Playwright (Chromium) + axe-core. See `TESTING.md`.
 - Run locally: `npm install && npx playwright install chromium`, then `npm test`.
-- CI runs the suite on every push / PR via `.github/workflows/test.yml`.
+- CI runs the suite on every push / PR via `.github/workflows/ci.yml` and gates the deploy.
 - The suite catches the bug class /qa is built to find — layout overflow, contrast,
   carousel/calendar regressions across all four locales. When you fix a UI bug,
   add a regression assertion to `tests/mobile.spec.js` next to the existing ones.
@@ -130,7 +130,7 @@ Skip it and the system is just files on disk.
 - The client-side `setLanguage()` in `script.js` still exists, but the language switcher now navigates between locale
   URLs (preserving the current `#anchor`) rather than swapping DOM in place. `currentLang` is read from
   `document.documentElement.lang` on init.
-- CI (`.github/workflows/deploy.yml`) runs `build_locales.py` before every deploy so the locale HTMLs always match
+- CI (`.github/workflows/ci.yml`) runs `build_locales.py` before every deploy so the locale HTMLs always match
   `translations.js` in production.
 
 ## Deliberate non-features

@@ -1,0 +1,135 @@
+name: CI
+
+# Single workflow that gates deploy on tests passing.
+#
+# - push to main:    test → deploy
+# - pull_request:    test only (no deploy)
+# - schedule (cron): deploy only (skip tests; cron only refreshes booking data)
+# - workflow_dispatch: test → deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Refresh availability from Airbnb + Booking.com every hour.
+    # Cron runs in UTC; :15 to dodge the top-of-hour runner burst.
+    - cron: "15 * * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  test:
+    # Skip tests on scheduled runs — cron only refreshes booking data, code
+    # is unchanged. Saves ~45s of runner time per hour.
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Rebuild per-locale HTMLs
+        run: python3 scripts/build_locales.py
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Resolve Playwright version
+        id: pw-version
+        run: echo "version=$(node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw-version.outputs.version }}
+
+      - name: Install Playwright browsers (cache miss)
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Install Playwright system deps (cache hit)
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
+      - name: Run Playwright tests
+        run: npx playwright test
+        env:
+          CI: true
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+  deploy:
+    # Deploy on push, schedule, manual dispatch — never on pull_request.
+    # Requires test success when test ran; runs anyway when test was skipped (cron).
+    if: |
+      github.event_name != 'pull_request' &&
+      (needs.test.result == 'success' || needs.test.result == 'skipped')
+    needs: [test]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Full history so build_locales.py can read the last commit date
+          # touching index.html / translations.js for sitemap <lastmod>.
+          fetch-depth: 0
+
+      - name: Setup Node (for build_locales.py → translations.js bridge)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Rebuild per-locale HTMLs from translations.js
+        run: python3 scripts/build_locales.py
+
+      - name: Sync availability from Airbnb + Booking.com iCal feeds
+        run: python3 scripts/sync_bookings.py
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

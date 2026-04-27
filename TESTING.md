@@ -74,10 +74,10 @@ assertion that the feature is reachable and visible.
 
 ## CI
 
-`.github/workflows/test.yml` runs the suite on every push and pull request.
+`.github/workflows/ci.yml` runs the suite on every push and pull request.
 Failure uploads the Playwright HTML report as an artifact (`playwright-report`).
 
-The deploy workflow (`.github/workflows/deploy.yml`) is independent — tests do
-not block deploy today, so a red test run will not stop a push to main from
-deploying. If you want to gate deploys on tests, add a `needs: playwright`
-to the deploy job.
+**Tests gate the deploy.** A red test run blocks the push from being published
+to GitHub Pages — the `deploy` job has `needs: [test]` and only runs when the
+test job succeeds (or was skipped, which only happens on the hourly cron that
+refreshes booking data without touching code).
