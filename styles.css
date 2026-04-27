@@ -225,8 +225,8 @@ section:nth-child(even) {
 
 .lang-btn {
   padding: 0.5rem 0.75rem;
-  min-height: 36px;
-  min-width: 36px;
+  min-height: 44px;
+  min-width: 44px;
   border: 1px solid var(--color-sand);
   background: transparent;
   border-radius: var(--radius-sm);
@@ -251,6 +251,11 @@ section:nth-child(even) {
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--color-sea-blue);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ----- Hero Section ----- */
@@ -737,6 +742,10 @@ section:nth-child(even) {
 .beach-alternatives h3 {
   color: var(--color-white);
   margin-bottom: var(--space-sm);
+}
+
+.beach-alternatives p {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .beach-alternatives ul {
@@ -1227,7 +1236,7 @@ section:nth-child(even) {
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
   }
 
   .nav-links.active {
@@ -1425,18 +1434,21 @@ section:nth-child(even) {
   }
 
   .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    padding: 8px 2px;
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-clip: content-box;
     border: none;
+    border-radius: 999px;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
   }
 
   .carousel-dot.active {
-    background: var(--color-white);
-    transform: scale(1.2);
+    background-color: var(--color-white);
+    transform: scale(1.15);
   }
 }
 
