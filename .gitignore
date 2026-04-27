@@ -24,3 +24,10 @@ bookings.json
 
 # Local-only review/working docs (not part of the project)
 docs/
+
+# Playwright
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

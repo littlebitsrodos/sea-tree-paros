@@ -104,6 +104,15 @@ Skip it and the system is just files on disk.
 - After any change to `translations.js` or the `index.html` body, rebuild per-locale pages:
   `python3 scripts/build_locales.py`.
 
+## Testing
+
+- Browser tests live in `tests/`. Stack: Playwright (Chromium) + axe-core. See `TESTING.md`.
+- Run locally: `npm install && npx playwright install chromium`, then `npm test`.
+- CI runs the suite on every push / PR via `.github/workflows/test.yml`.
+- The suite catches the bug class /qa is built to find — layout overflow, contrast,
+  carousel/calendar regressions across all four locales. When you fix a UI bug,
+  add a regression assertion to `tests/mobile.spec.js` next to the existing ones.
+
 ## i18n architecture
 
 - **Four locales, four URLs.** EN at `/`, others at `/es/`, `/el/`, `/fr/`. Each has its own `index.html` so
