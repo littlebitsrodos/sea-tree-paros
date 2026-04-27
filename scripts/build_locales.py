@@ -23,8 +23,10 @@ fresh from the current index.html + translations.js.
 import datetime
 import json
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,10 +37,15 @@ DOMAIN = "https://seatree.gr"
 
 
 def load_translations():
-    node_script = "console.log(JSON.stringify(require('./translations.js')))"
-    out = subprocess.check_output(
-        ["node", "-e", node_script], cwd=ROOT, stderr=subprocess.STDOUT
-    ).decode()
+    # Copy translations.js to a temp .cjs so Node always treats it as CommonJS,
+    # even if some parent package.json declares "type": "module" (e.g. Playwright config).
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp_path = Path(tmp) / "translations.cjs"
+        shutil.copyfile(ROOT / "translations.js", tmp_path)
+        node_script = f"console.log(JSON.stringify(require({json.dumps(str(tmp_path))})))"
+        out = subprocess.check_output(
+            ["node", "-e", node_script], cwd=ROOT, stderr=subprocess.STDOUT
+        ).decode()
     return json.loads(out)
 
 
