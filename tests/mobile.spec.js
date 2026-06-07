@@ -147,6 +147,23 @@ test.describe('navigation', () => {
   });
 });
 
+test.describe('gallery interactions', () => {
+  test.beforeEach(({ }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'desktop-only suite');
+  });
+
+  test('desktop gallery opens the lightbox', async ({ page }) => {
+    await page.goto('/');
+    await waitForSiteStyles(page);
+
+    await page.locator('.gallery-grid .gallery-item').first().click();
+
+    const lightbox = page.locator('.lightbox.active');
+    await expect(lightbox).toBeVisible();
+    await expect(lightbox.locator('img')).toHaveAttribute('src', /.+/);
+  });
+});
+
 test.describe('cookie consent (GA4 Consent Mode v2)', () => {
   // Paused 2026-04-30: GA4 disabled until correct seatree.gr Property ID arrives;
   // banner is suppressed in script.js. Re-enable when initConsentBanner() is restored.

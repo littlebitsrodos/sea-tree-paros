@@ -170,12 +170,58 @@
     @font-face{font-family:'Outfit';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/outfit-regular-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
     @font-face{font-family:'Outfit';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/outfit-regular-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
   </style>
+  <style data-critical-css>
+    :root{--color-terracotta:#8B5F44;--color-terracotta-light:#B8886B;--color-sand:#E8DCC4;--color-sand-light:#F7F3ED;--color-sea-blue:#3D5A6E;--color-white:#FFFFFF;--color-cream:#FDFBF8;--color-text:#3A3633;--color-text-muted:#665F58;--font-heading:'Cormorant Garamond',Georgia,serif;--font-body:'Outfit',system-ui,sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:5rem;--space-xl:8rem;--shadow-soft:0 4px 24px rgba(58,54,51,.06);--shadow-medium:0 8px 32px rgba(58,54,51,.08);--radius-sm:6px;--radius-lg:20px;--transition-fast:.3s ease;--transition-medium:.5s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--font-body);color:var(--color-text);background:var(--color-cream);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    .hidden{display:none!important}
+    .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.95);z-index:2000;opacity:0;visibility:hidden}
+    .lightbox.active{opacity:1;visibility:visible}
+    a{color:var(--color-terracotta);text-decoration:none;transition:color var(--transition-fast)}
+    a:hover{color:var(--color-terracotta-light)}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-md)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:500;line-height:1.2;color:var(--color-sea-blue)}
+    p{margin-bottom:var(--space-sm);color:var(--color-text-muted)}
+    .skip-link{position:absolute;top:-40px;left:var(--space-sm);padding:.5rem 1rem;background:var(--color-sea-blue);color:var(--color-white);border-radius:var(--radius-sm);font-weight:500;z-index:10000}
+    .skip-link:focus{top:var(--space-sm);outline:2px solid var(--color-terracotta);outline-offset:2px}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:var(--shadow-soft);transition:all var(--transition-medium)}
+    .navbar-content{display:flex;justify-content:space-between;align-items:center;padding:var(--space-sm) 0}
+    .logo{font-family:var(--font-heading);font-size:1.5rem;color:var(--color-sea-blue);font-weight:600}
+    .logo span{color:var(--color-terracotta-light)}
+    .nav-links{display:flex;gap:var(--space-md);list-style:none}
+    .nav-links a{color:var(--color-text);font-size:.9rem;font-weight:500}
+    .language-switcher{display:flex;gap:var(--space-xs)}
+    .lang-btn{padding:.5rem .75rem;min-height:44px;min-width:44px;border:1px solid var(--color-sand);background:transparent;border-radius:var(--radius-sm);cursor:pointer;font-size:.8rem;font-family:var(--font-body);color:var(--color-text-muted)}
+    .lang-btn.active{background:var(--color-sea-blue);color:var(--color-white);border-color:var(--color-sea-blue)}
+    .mobile-menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--color-sea-blue);min-width:44px;min-height:44px;padding:0;align-items:center;justify-content:center}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:80px}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,40,60,.55) 0%,rgba(20,40,60,.7) 100%);z-index:-1}
+    .hero-content{text-align:center;color:var(--color-white);padding:var(--space-md)}
+    .hero h1{color:var(--color-white);font-size:clamp(2.5rem,5vw,4rem);margin-bottom:var(--space-sm);text-shadow:0 2px 8px rgba(0,0,0,.6),0 4px 20px rgba(0,0,0,.4)}
+    .hero-tagline{font-family:var(--font-heading);font-size:clamp(1.25rem,2.5vw,1.75rem);font-style:italic;color:var(--color-white);margin-bottom:var(--space-md);text-shadow:0 2px 8px rgba(0,0,0,.6),0 4px 20px rgba(0,0,0,.4)}
+    .breathe-container{display:flex;flex-direction:column;justify-content:center;align-items:center;margin:var(--space-sm) auto var(--space-md);height:120px;position:relative}
+    .breathe-circle{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4)}
+    .breathe-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.7rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.95);text-shadow:0 1px 4px rgba(0,0,0,.5);white-space:nowrap}
+    .breathe-out{opacity:0}
+    .hero-location{display:flex;align-items:center;justify-content:center;gap:var(--space-xs);font-size:1.1rem;color:var(--color-white);text-shadow:0 2px 8px rgba(0,0,0,.6)}
+    .hero-location svg{width:20px;height:20px}
+    .hero-location span,.hero-location p{color:var(--color-white)}
+    .hero-actions{display:flex;justify-content:center;align-items:center;gap:var(--space-sm);flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:var(--space-xs);padding:.875rem 2rem;border:0;border-radius:var(--radius-lg);font-family:var(--font-body);font-size:1rem;font-weight:500;cursor:pointer;text-decoration:none}
+    .btn-primary{background:var(--color-terracotta);color:var(--color-white);box-shadow:0 4px 20px rgba(184,136,107,.2)}
+    .btn-white{background:var(--color-white);color:var(--color-sea-blue)}
+    .scroll-indicator{position:absolute;bottom:var(--space-md);left:50%;transform:translateX(-50%);opacity:.7}
+    @media (max-width:768px){.nav-links{display:none}.mobile-menu-btn{display:flex}.nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--color-white);padding:var(--space-md);box-shadow:var(--shadow-medium)}.hero{min-height:80vh}.hero-actions{flex-direction:column}.btn{width:100%;justify-content:center}}
+  </style>
 
   <!-- Preload Hero Image -->
   <link rel="preload" as="image" href="images/optimized/webp/drone/drone-top-down-boats-in-clear-water.webp">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Styles: preload, then apply from deferred script.js so CSS does not block initial render. -->
+  <link rel="preload" href="styles.css" as="style" data-main-stylesheet>
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
   <!-- Scripts - Defer for performance -->
   <!-- GA4 paused 2026-04-30: previous Measurement ID was for Costomenu, not seatree.gr.

@@ -3,6 +3,17 @@
 // Language switcher, calendar, gallery lightbox, forms
 // =====================================================
 
+// Apply the preloaded full stylesheet after the critical inline CSS has covered
+// first paint. This keeps the stylesheet out of the initial render-blocking path.
+(() => {
+    const stylesheet = document.querySelector('link[data-main-stylesheet]');
+    if (!stylesheet) return;
+
+    stylesheet.rel = 'stylesheet';
+    stylesheet.removeAttribute('as');
+    stylesheet.removeAttribute('data-main-stylesheet');
+})();
+
 // ----- State Management -----
 // Locale is driven by the URL: /, /en/, /es/, /el/, /fr/. The <html lang="..">
 // attribute is set per locale at build time, so we read from there on init.
@@ -439,10 +450,10 @@ function handleLightboxSwipe() {
 }
 
 function startGalleryRotation() {
-    // Only rotate through items currently visible in the desktop grid —
-    // items 10+ are display:none after the curated-grid pass.
+    // Keep this in sync with the CSS rule that displays only the first five
+    // desktop grid items, without reading layout during init.
     const galleryItems = Array.from(document.querySelectorAll('.gallery-grid .gallery-item'))
-        .filter(item => item.offsetParent !== null);
+        .slice(0, 5);
     if (galleryItems.length === 0) return;
 
     stopGalleryRotation();
