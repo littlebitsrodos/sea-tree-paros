@@ -246,7 +246,8 @@ function initGallery() {
     // Collect all gallery images
     galleryImages = Array.from(galleryItems).map(item => ({
         src: item.querySelector('img')?.src,
-        alt: item.querySelector('img')?.alt
+        alt: item.querySelector('img')?.alt,
+        caption: item.querySelector('.photo-caption')?.textContent?.trim()
     }));
 
     // Initialize mobile carousel
@@ -408,6 +409,7 @@ function initMobileCarousel() {
 function openLightbox(index) {
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox?.querySelector('img');
+    const lightboxCaption = lightbox?.querySelector('.lightbox-caption');
     const counterCurrent = lightbox?.querySelector('.lightbox-counter .current');
     const counterTotal = lightbox?.querySelector('.lightbox-counter .total');
 
@@ -416,6 +418,9 @@ function openLightbox(index) {
     currentLightboxIndex = index;
     lightboxImg.src = galleryImages[index].src;
     lightboxImg.alt = galleryImages[index].alt;
+    if (lightboxCaption) {
+        lightboxCaption.textContent = galleryImages[index].caption || galleryImages[index].alt || '';
+    }
 
     if (counterCurrent) counterCurrent.textContent = index + 1;
     if (counterTotal) counterTotal.textContent = galleryImages.length;
@@ -432,11 +437,15 @@ function navigateLightbox(direction) {
 
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox?.querySelector('img');
+    const lightboxCaption = lightbox?.querySelector('.lightbox-caption');
     const counterCurrent = lightbox?.querySelector('.lightbox-counter .current');
 
     if (lightboxImg && galleryImages[currentLightboxIndex]) {
         lightboxImg.src = galleryImages[currentLightboxIndex].src;
         lightboxImg.alt = galleryImages[currentLightboxIndex].alt;
+    }
+    if (lightboxCaption && galleryImages[currentLightboxIndex]) {
+        lightboxCaption.textContent = galleryImages[currentLightboxIndex].caption || galleryImages[currentLightboxIndex].alt || '';
     }
     if (counterCurrent) counterCurrent.textContent = currentLightboxIndex + 1;
 }
