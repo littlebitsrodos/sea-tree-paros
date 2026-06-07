@@ -215,7 +215,7 @@ const translations = {
       text: "We use cookies to understand how this site is used. Analytics only — no advertising trackers.",
       accept: "Accept",
       decline: "Decline",
-      learnMore: "Learn more"
+      learnMore: "Read our Privacy Policy"
     }
   },
 
@@ -430,7 +430,7 @@ const translations = {
       text: "Usamos cookies para entender cómo se utiliza este sitio. Solo analíticas — sin rastreadores publicitarios.",
       accept: "Aceptar",
       decline: "Rechazar",
-      learnMore: "Más información"
+      learnMore: "Leer la Política de Privacidad"
     }
   },
 
@@ -645,7 +645,7 @@ const translations = {
       text: "Χρησιμοποιούμε cookies για να καταλάβουμε πώς χρησιμοποιείται ο ιστότοπος. Μόνο analytics — χωρίς διαφημιστικούς ιχνηλάτες.",
       accept: "Αποδοχή",
       decline: "Απόρριψη",
-      learnMore: "Διαβάστε περισσότερα"
+      learnMore: "Διαβάστε την Πολιτική Απορρήτου"
     }
   },
 
@@ -860,7 +860,7 @@ const translations = {
       text: "Nous utilisons des cookies pour comprendre l'utilisation de ce site. Analyses uniquement — pas de traceurs publicitaires.",
       accept: "Accepter",
       decline: "Refuser",
-      learnMore: "En savoir plus"
+      learnMore: "Lire la Politique de Confidentialité"
     }
   }
 };
