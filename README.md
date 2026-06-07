@@ -1,6 +1,6 @@
-# Sea Tree
+# The SeaTree
 
-Static vacation-rental site for Sea Tree, Aliki Beach, Paros.
+Static vacation-rental site for The SeaTree, Aliki Beach, Paros.
 
 ## Runtime Surface
 

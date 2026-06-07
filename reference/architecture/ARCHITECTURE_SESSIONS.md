@@ -1,4 +1,4 @@
-# Sea Tree Architecture Sessions
+# The SeaTree Architecture Sessions
 
 Date: 2026-05-10
 
@@ -16,7 +16,7 @@ Use one candidate per session. Do not combine unrelated refactors.
 2. **Agent Context Module** — complete
    - Clean up repo navigation for future agents.
    - Goal: make `PROJECT_CONTEXT.md`, `AGENTS.md`, `CLAUDE.md`, and `.agent/` roles explicit and non-contradictory.
-   - Output: root harness files contain only practical Sea Tree project guidance.
+   - Output: root harness files contain only practical The SeaTree project guidance.
 
 3. **Contact/Booking Contact Surface Cleanup** — next recommended session
    - Resolve stale Formspree code versus current direct-contact UI.

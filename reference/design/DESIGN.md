@@ -1,14 +1,14 @@
-# Sea Tree Design Brief
+# The SeaTree Design Brief
 
 ## North Star
 
-Sea Tree is not trying to attract the most bookings. It is trying to attract the right 2-3 repeat guests: people with taste, respect, time, and the desire to return every year until the house feels like part of their life.
+The SeaTree is not trying to attract the most bookings. It is trying to attract the right 2-3 repeat guests: people with taste, respect, time, and the desire to return every year until the house feels like part of their life.
 
 The site should feel like a personal invitation to live the rhythm of Aliki, not a generic vacation-rental funnel.
 
 ## Positioning
 
-Sea Tree is a personal seaside home on the quiet side of Aliki, Paros, made for longer stays, slow days, quiet work, real rest, and returning guests.
+The SeaTree is a personal seaside home on the quiet side of Aliki, Paros, made for longer stays, slow days, quiet work, real rest, and returning guests.
 
 Core promise:
 
@@ -97,7 +97,7 @@ Do not write:
 
 Recommended FAQ copy:
 
-> Rates are based on the season and requested dates rather than stay length. Sea Tree is especially well suited to longer stays because of its comfort, quiet location, work setup, and village rhythm.
+> Rates are based on the season and requested dates rather than stay length. The SeaTree is especially well suited to longer stays because of its comfort, quiet location, work setup, and village rhythm.
 
 ## Conversion Strategy
 
@@ -121,7 +121,7 @@ Secondary conversion:
 
 Platform fallback:
 
-> Prefer a platform booking? Sea Tree is also listed on Airbnb and Booking.com.
+> Prefer a platform booking? The SeaTree is also listed on Airbnb and Booking.com.
 
 Airbnb and Booking.com remain trust and booking channels, but the site should primarily guide good-fit long-stay guests toward direct contact.
 
@@ -181,7 +181,7 @@ Use four scenes:
 
 Reference copy:
 
-> At Sea Tree, Aliki becomes part of your day: a walk by the bay, boats in the evening light, the village close enough for everything you need, and quiet enough to let time stretch.
+> At The SeaTree, Aliki becomes part of your day: a walk by the bay, boats in the evening light, the village close enough for everything you need, and quiet enough to let time stretch.
 
 ## Life in Aliki
 
@@ -195,11 +195,11 @@ Do not imply full urban convenience.
 
 ## Year-Round Home
 
-Sea Tree is not only a summer rental.
+The SeaTree is not only a summer rental.
 
 Recommended copy:
 
-> Made for more than summer, Sea Tree is a year-round seaside home, with a fireplace, quiet work corners, and the comfort to settle in for longer.
+> Made for more than summer, The SeaTree is a year-round seaside home, with a fireplace, quiet work corners, and the comfort to settle in for longer.
 
 Use this in the longer-stays or practical-comforts section, not as the main hero message.
 
@@ -213,7 +213,7 @@ Title:
 
 Direction:
 
-The note should explain that Sea Tree is not just a place to rent, but a home the owners want to share with people who understand its rhythm.
+The note should explain that The SeaTree is not just a place to rent, but a home the owners want to share with people who understand its rhythm.
 
 It should invite guests to describe the kind of stay they imagine.
 

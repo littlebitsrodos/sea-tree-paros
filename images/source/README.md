@@ -1,6 +1,6 @@
 # Source Images
 
-This folder holds non-public image assets and working material for Sea Tree.
+This folder holds non-public image assets and working material for The SeaTree.
 
 Only `images/optimized/` should be linked from HTML, CSS, metadata, or scripts.
 

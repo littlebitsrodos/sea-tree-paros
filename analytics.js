@@ -1,4 +1,4 @@
-// Sea Tree — GA4 with Consent Mode v2
+// The SeaTree — GA4 with Consent Mode v2
 // Loaded BEFORE googletagmanager's gtag.js (defer-ordered) so the consent
 // default is in place before the first pageview fires.
 window.dataLayer = window.dataLayer || [];

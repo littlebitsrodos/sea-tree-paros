@@ -1,5 +1,5 @@
 // =====================================================
-// SEA TREE — Translations
+// The SeaTree — Translations
 // All text content in 4 languages: EN, ES, GR, FR
 // =====================================================
 
@@ -7,12 +7,12 @@ const translations = {
   en: {
     // Meta / head tags (used by the per-locale build step)
     meta: {
-      title: "Sea Tree | Vacation Rental in Paros, Greece",
-      description: "Sea Tree — a unique vacation rental in Aliki Beach, Paros, Greece. The former legendary Romantica disco bar, transformed into a serene island retreat.",
-      ogTitle: "Sea Tree | Vacation Rental in Paros, Greece",
-      ogDescription: "From dance floor to dream stay — Sea Tree, a unique vacation rental in Aliki Beach, Paros. The former legendary Romantica disco bar, transformed into a serene island retreat.",
-      twitterTitle: "Sea Tree | Paros, Greece",
-      twitterDescription: "From dance floor to dream stay — Sea Tree, vacation rental in Aliki Beach, Paros."
+      title: "The SeaTree | Vacation Rental in Paros, Greece",
+      description: "The SeaTree — a unique vacation rental in Aliki Beach, Paros, Greece. The former legendary Romantica disco bar, transformed into a serene island retreat.",
+      ogTitle: "The SeaTree | Vacation Rental in Paros, Greece",
+      ogDescription: "From dance floor to dream stay — The SeaTree, a unique vacation rental in Aliki Beach, Paros. The former legendary Romantica disco bar, transformed into a serene island retreat.",
+      twitterTitle: "The SeaTree | Paros, Greece",
+      twitterDescription: "From dance floor to dream stay — The SeaTree, vacation rental in Aliki Beach, Paros."
     },
 
     // Accessibility
@@ -32,7 +32,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Sea Tree",
+      title: "The SeaTree",
       tagline: "Slow down. Breathe.",
       location: "Aliki Beach, Paros, Greece",
       checkAvailability: "Check Availability",
@@ -59,7 +59,7 @@ const translations = {
       viewAll: "View all photos",
       captions: [
         "Gather in a sea-view living room made for slow evenings.",
-        "Crystal-clear water and fishing boats, right below Sea Tree.",
+        "Crystal-clear water and fishing boats, right below The SeaTree.",
         "A quiet Aliki setting with the harbor and village at your feet.",
         "Start the day with yoga, light, and the sea framed in the doorway.",
         "Breakfast with harbor views before the village wakes up.",
@@ -67,7 +67,7 @@ const translations = {
         "Covered outdoor dining with shade, breeze, and sea views.",
         "Lounge outside with the whole bay in view.",
         "Steps from the house down toward the waterfront.",
-        "Sea Tree sits beside the water, with Aliki at your doorstep.",
+        "The SeaTree sits beside the water, with Aliki at your doorstep.",
         "A rare seafront position in the heart of the village.",
         "Arrive by the stone path and feel the house open to the sea.",
         "A simple white entrance with island light and greenery.",
@@ -92,7 +92,7 @@ const translations = {
         "The natural rocky shoreline is just outside the house.",
         "Explore the coastal path and quiet coves by the water.",
         "Look across the bay to Aliki's calm shoreline.",
-        "Sea Tree's position is easy to understand from above.",
+        "The SeaTree's position is easy to understand from above.",
         "Aliki village, the bay, and your stay all in one view."
       ]
     },
@@ -218,7 +218,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Book Your Stay",
-      title: "Ready to Experience Sea Tree?",
+      title: "Ready to Experience The SeaTree?",
       subtitle: "Talk to the host or book through your favorite platform",
       directTitle: "Talk to Antonis",
       directSub: "No forms, no waiting — just a direct line to the host. Usually replies within a few hours.",
@@ -244,7 +244,7 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Aliki Beach, Paros 844 00, Greece",
-      copyright: "© 2026 Sea Tree. All rights reserved.",
+      copyright: "© 2026 The SeaTree. All rights reserved.",
       privacyLink: "Privacy Policy"
     },
 
@@ -260,12 +260,12 @@ const translations = {
   es: {
     // Meta
     meta: {
-      title: "Sea Tree | Alquiler Vacacional en Paros, Grecia",
-      description: "Sea Tree — un alquiler vacacional único en la playa de Aliki, Paros, Grecia. El legendario disco bar Romantica, transformado en un refugio sereno de la isla.",
-      ogTitle: "Sea Tree | Alquiler Vacacional en Paros, Grecia",
-      ogDescription: "De la pista de baile al sueño — Sea Tree, un alquiler vacacional único en Aliki, Paros. El legendario disco bar Romantica, ahora un refugio sereno.",
-      twitterTitle: "Sea Tree | Paros, Grecia",
-      twitterDescription: "De la pista de baile al sueño — Sea Tree, alquiler vacacional en Aliki, Paros."
+      title: "The SeaTree | Alquiler Vacacional en Paros, Grecia",
+      description: "The SeaTree — un alquiler vacacional único en la playa de Aliki, Paros, Grecia. El legendario disco bar Romantica, transformado en un refugio sereno de la isla.",
+      ogTitle: "The SeaTree | Alquiler Vacacional en Paros, Grecia",
+      ogDescription: "De la pista de baile al sueño — The SeaTree, un alquiler vacacional único en Aliki, Paros. El legendario disco bar Romantica, ahora un refugio sereno.",
+      twitterTitle: "The SeaTree | Paros, Grecia",
+      twitterDescription: "De la pista de baile al sueño — The SeaTree, alquiler vacacional en Aliki, Paros."
     },
 
     // Accessibility
@@ -285,7 +285,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Sea Tree",
+      title: "The SeaTree",
       tagline: "Desacelera. Respira.",
       location: "Playa de Aliki, Paros, Grecia",
       checkAvailability: "Ver Disponibilidad",
@@ -312,7 +312,7 @@ const translations = {
       viewAll: "Ver todas las fotos",
       captions: [
         "Reúnete en un salón con vistas al mar para tardes tranquilas.",
-        "Agua cristalina y barcas de pesca justo debajo de Sea Tree.",
+        "Agua cristalina y barcas de pesca justo debajo de The SeaTree.",
         "Una ubicación tranquila en Aliki, con puerto y pueblo a tus pies.",
         "Empieza el día con yoga, luz y el mar enmarcado por la puerta.",
         "Desayuno con vistas al puerto antes de que despierte el pueblo.",
@@ -320,7 +320,7 @@ const translations = {
         "Comedor exterior cubierto con sombra, brisa y vistas al mar.",
         "Relájate fuera con toda la bahía a la vista.",
         "Escalones desde la casa hacia la orilla.",
-        "Sea Tree está junto al agua, con Aliki a la puerta.",
+        "The SeaTree está junto al agua, con Aliki a la puerta.",
         "Una rara ubicación frente al mar en el corazón del pueblo.",
         "Llega por el camino de piedra y siente cómo la casa se abre al mar.",
         "Una entrada blanca y sencilla con luz isleña y vegetación.",
@@ -345,7 +345,7 @@ const translations = {
         "La costa rocosa natural está justo fuera de la casa.",
         "Explora el sendero costero y calas tranquilas junto al agua.",
         "Mira al otro lado de la bahía hacia la costa tranquila de Aliki.",
-        "Desde arriba se entiende claramente la ubicación de Sea Tree.",
+        "Desde arriba se entiende claramente la ubicación de The SeaTree.",
         "El pueblo de Aliki, la bahía y tu estancia en una sola vista."
       ]
     },
@@ -471,7 +471,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Reserva Tu Estancia",
-      title: "¿Listo Para Vivir Sea Tree?",
+      title: "¿Listo Para Vivir The SeaTree?",
       subtitle: "Habla con el anfitrión o reserva directamente en tu plataforma favorita",
       directTitle: "Habla con Antonis",
       directSub: "Sin formularios, sin espera — solo una línea directa con el anfitrión. Generalmente responde en pocas horas.",
@@ -497,7 +497,7 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Playa de Aliki, Paros 844 00, Grecia",
-      copyright: "© 2026 Sea Tree. Todos los derechos reservados.",
+      copyright: "© 2026 The SeaTree. Todos los derechos reservados.",
       privacyLink: "Política de Privacidad"
     },
 
@@ -513,12 +513,12 @@ const translations = {
   el: {
     // Meta
     meta: {
-      title: "Sea Tree | Εξοχική Κατοικία στην Πάρο, Ελλάδα",
-      description: "Sea Tree — μια μοναδική εξοχική κατοικία στην Αλυκή, Πάρος, Ελλάδα. Το θρυλικό disco bar Romantica, μεταμορφωμένο σε γαλήνιο νησιωτικό καταφύγιο.",
-      ogTitle: "Sea Tree | Εξοχική Κατοικία στην Πάρο, Ελλάδα",
-      ogDescription: "Από την πίστα χορού στο όνειρο — Sea Tree, μοναδική εξοχική κατοικία στην Αλυκή, Πάρο. Το θρυλικό disco bar Romantica, τώρα γαλήνιο καταφύγιο.",
-      twitterTitle: "Sea Tree | Πάρος, Ελλάδα",
-      twitterDescription: "Από την πίστα χορού στο όνειρο — Sea Tree, εξοχική κατοικία στην Αλυκή, Πάρος."
+      title: "The SeaTree | Εξοχική Κατοικία στην Πάρο, Ελλάδα",
+      description: "The SeaTree — μια μοναδική εξοχική κατοικία στην Αλυκή, Πάρος, Ελλάδα. Το θρυλικό disco bar Romantica, μεταμορφωμένο σε γαλήνιο νησιωτικό καταφύγιο.",
+      ogTitle: "The SeaTree | Εξοχική Κατοικία στην Πάρο, Ελλάδα",
+      ogDescription: "Από την πίστα χορού στο όνειρο — The SeaTree, μοναδική εξοχική κατοικία στην Αλυκή, Πάρο. Το θρυλικό disco bar Romantica, τώρα γαλήνιο καταφύγιο.",
+      twitterTitle: "The SeaTree | Πάρος, Ελλάδα",
+      twitterDescription: "Από την πίστα χορού στο όνειρο — The SeaTree, εξοχική κατοικία στην Αλυκή, Πάρος."
     },
 
     // Accessibility
@@ -538,7 +538,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Sea Tree",
+      title: "The SeaTree",
       tagline: "Χαλάρωσε. Ανάπνευσε.",
       location: "Αλυκή, Πάρος, Ελλάδα",
       checkAvailability: "Έλεγχος Διαθεσιμότητας",
@@ -565,7 +565,7 @@ const translations = {
       viewAll: "Δείτε όλες τις φωτογραφίες",
       captions: [
         "Σαλόνι με θέα στη θάλασσα, για χαλαρά βράδια όλοι μαζί.",
-        "Καθαρά νερά και ψαρόβαρκες, ακριβώς κάτω από το Sea Tree.",
+        "Καθαρά νερά και ψαρόβαρκες, ακριβώς κάτω από το The SeaTree.",
         "Ήσυχη θέση στην Αλυκή, με λιμάνι και χωριό μπροστά σας.",
         "Ξεκινήστε τη μέρα με yoga, φως και τη θάλασσα στο άνοιγμα της πόρτας.",
         "Πρωινό με θέα στο λιμάνι πριν ξυπνήσει το χωριό.",
@@ -573,7 +573,7 @@ const translations = {
         "Σκεπαστή τραπεζαρία έξω, με σκιά, αέρα και θέα θάλασσα.",
         "Χαλαρώστε έξω με όλο τον κόλπο μπροστά σας.",
         "Σκαλιά από το σπίτι προς τη θάλασσα.",
-        "Το Sea Tree βρίσκεται δίπλα στο νερό, με την Αλυκή στην πόρτα σας.",
+        "Το The SeaTree βρίσκεται δίπλα στο νερό, με την Αλυκή στην πόρτα σας.",
         "Σπάνια παραθαλάσσια θέση στην καρδιά του χωριού.",
         "Φτάνετε από το πέτρινο μονοπάτι και το σπίτι ανοίγει στη θάλασσα.",
         "Λευκή είσοδος με νησιώτικο φως και πράσινο.",
@@ -598,7 +598,7 @@ const translations = {
         "Η φυσική βραχώδης ακτή βρίσκεται ακριβώς έξω από το σπίτι.",
         "Περπατήστε στο παραλιακό μονοπάτι και στους ήσυχους κολπίσκους.",
         "Θέα απέναντι στον ήρεμο κόλπο της Αλυκής.",
-        "Από ψηλά φαίνεται καθαρά η θέση του Sea Tree.",
+        "Από ψηλά φαίνεται καθαρά η θέση του The SeaTree.",
         "Η Αλυκή, ο κόλπος και η διαμονή σας σε μία εικόνα."
       ]
     },
@@ -724,7 +724,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Κλείστε τη Διαμονή σας",
-      title: "Έτοιμοι να Ζήσετε το Sea Tree;",
+      title: "Έτοιμοι να Ζήσετε το The SeaTree;",
       subtitle: "Μιλήστε με τον οικοδεσπότη ή κλείστε απευθείας στην αγαπημένη σας πλατφόρμα",
       directTitle: "Μιλήστε στον Αντώνη",
       directSub: "Χωρίς φόρμες, χωρίς αναμονή — απευθείας επικοινωνία με τον οικοδεσπότη. Συνήθως απαντά μέσα σε λίγες ώρες.",
@@ -750,7 +750,7 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
-      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος.",
+      copyright: "© 2026 The SeaTree. Με επιφύλαξη παντός δικαιώματος.",
       privacyLink: "Πολιτική Απορρήτου"
     },
 
@@ -766,12 +766,12 @@ const translations = {
   fr: {
     // Meta
     meta: {
-      title: "Sea Tree | Location de Vacances à Paros, Grèce",
-      description: "Sea Tree — une location de vacances unique à la plage d'Aliki, Paros, Grèce. Le légendaire disco-bar Romantica, transformé en refuge insulaire serein.",
-      ogTitle: "Sea Tree | Location de Vacances à Paros, Grèce",
-      ogDescription: "De la piste de danse au rêve — Sea Tree, location de vacances unique à Aliki, Paros. Le légendaire disco-bar Romantica, devenu refuge paisible.",
-      twitterTitle: "Sea Tree | Paros, Grèce",
-      twitterDescription: "De la piste de danse au rêve — Sea Tree, location de vacances à Aliki, Paros."
+      title: "The SeaTree | Location de Vacances à Paros, Grèce",
+      description: "The SeaTree — une location de vacances unique à la plage d'Aliki, Paros, Grèce. Le légendaire disco-bar Romantica, transformé en refuge insulaire serein.",
+      ogTitle: "The SeaTree | Location de Vacances à Paros, Grèce",
+      ogDescription: "De la piste de danse au rêve — The SeaTree, location de vacances unique à Aliki, Paros. Le légendaire disco-bar Romantica, devenu refuge paisible.",
+      twitterTitle: "The SeaTree | Paros, Grèce",
+      twitterDescription: "De la piste de danse au rêve — The SeaTree, location de vacances à Aliki, Paros."
     },
 
     // Accessibility
@@ -791,7 +791,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Sea Tree",
+      title: "The SeaTree",
       tagline: "Ralentissez. Respirez.",
       location: "Plage d'Aliki, Paros, Grèce",
       checkAvailability: "Vérifier Disponibilité",
@@ -818,7 +818,7 @@ const translations = {
       viewAll: "Voir toutes les photos",
       captions: [
         "Retrouvez-vous dans un salon vue mer, pensé pour les soirées lentes.",
-        "Eau cristalline et bateaux de pêche juste sous Sea Tree.",
+        "Eau cristalline et bateaux de pêche juste sous The SeaTree.",
         "Une adresse paisible à Aliki, avec le port et le village à vos pieds.",
         "Commencez la journée avec yoga, lumière et mer dans l’encadrement de la porte.",
         "Petit-déjeuner face au port avant le réveil du village.",
@@ -826,7 +826,7 @@ const translations = {
         "Un repas dehors à l’ombre, avec brise et vue sur la mer.",
         "Détendez-vous dehors avec toute la baie devant vous.",
         "Quelques marches depuis la maison vers le bord de mer.",
-        "Sea Tree est au bord de l’eau, avec Aliki à votre porte.",
+        "The SeaTree est au bord de l’eau, avec Aliki à votre porte.",
         "Un rare emplacement en bord de mer au cœur du village.",
         "Arrivez par le chemin de pierre et sentez la maison s’ouvrir à la mer.",
         "Une entrée blanche et simple, baignée de lumière insulaire.",
@@ -851,7 +851,7 @@ const translations = {
         "Le rivage rocheux naturel se trouve juste devant la maison.",
         "Explorez le sentier côtier et les criques calmes près de l’eau.",
         "Vue sur le rivage paisible d’Aliki, de l’autre côté de la baie.",
-        "Depuis le ciel, l’emplacement de Sea Tree devient évident.",
+        "Depuis le ciel, l’emplacement de The SeaTree devient évident.",
         "Le village d’Aliki, la baie et votre séjour dans une seule vue."
       ]
     },
@@ -977,7 +977,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Réservez Votre Séjour",
-      title: "Prêt à Vivre l'Expérience Sea Tree ?",
+      title: "Prêt à Vivre l'Expérience The SeaTree ?",
       subtitle: "Parlez à l'hôte ou réservez directement sur votre plateforme préférée",
       directTitle: "Parlez à Antonis",
       directSub: "Pas de formulaires, pas d'attente — juste un contact direct avec l'hôte. Répond généralement en quelques heures.",
@@ -1003,7 +1003,7 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
-      copyright: "© 2026 Sea Tree. Tous droits réservés.",
+      copyright: "© 2026 The SeaTree. Tous droits réservés.",
       privacyLink: "Politique de Confidentialité"
     },
 

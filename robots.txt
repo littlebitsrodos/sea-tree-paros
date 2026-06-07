@@ -1,4 +1,4 @@
-# Sea Tree - Vacation Rental in Paros, Greece
+# The SeaTree - Vacation Rental in Paros, Greece
 # https://seatree.gr/
 
 User-agent: *

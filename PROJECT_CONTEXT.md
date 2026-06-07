@@ -26,7 +26,7 @@ explicitly asks to clean or commit them. Do not reset or delete unrelated work.
 
 ## Project Shape
 
-Sea Tree is a static vacation-rental website for Aliki Beach, Paros.
+The SeaTree is a static vacation-rental website for Aliki Beach, Paros.
 
 - Plain HTML, CSS, and vanilla JavaScript.
 - No app build step for normal development.
@@ -80,7 +80,7 @@ availability, and contact.
 - Public image assets live in `images/optimized/`.
 - Source/raw photos live under `images/source/`, grouped into `imports/`, `real/`, `ai/`, and `misc/`.
 - Existing favicon is `favicon.svg`; it is a small circular sea-blue mark with wave lines.
-- Current header/footer brand treatment is text-only: `Sea <span>Tree</span>`.
+- Current header/footer brand treatment is text-only: `The <span>SeaTree</span>`.
 - `images/source/imports/2026-04-30-yoga-room-and-brass-turtles/` is currently source material and should be treated as incoming photography until reviewed.
 
 ## Current Active Task

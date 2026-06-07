@@ -1,6 +1,6 @@
-# Project Instructions (Codex) — Sea Tree
+# Project Instructions (Codex) — The SeaTree
 
-Static vacation-rental site for Sea Tree, Aliki Beach, Paros.
+Static vacation-rental site for The SeaTree, Aliki Beach, Paros.
 
 ## Stack
 
@@ -39,7 +39,7 @@ python3 scripts/build_locales.py
 ```
 
 - If a cached file changes, bump the cache version in `sw.js`.
-- Keep the Sea Tree brand. Do not remove historical references to Romantica when they describe the former disco/bar history.
+- Keep The SeaTree as the brand. Do not remove historical references to Romantica when they describe the former disco/bar history.
 
 ## Local Work
 
@@ -67,5 +67,5 @@ Browser tests live in `tests/` and cover layout overflow, contrast, carousel/cal
 
 ## Known Quirks
 
-- The project directory was renamed from `romantica-blue/` to `sea-tree-paros`; the brand is now Sea Tree.
+- The project directory was renamed from `romantica-blue/` to `sea-tree-paros`; the brand is now The SeaTree.
 - `.DS_Store` files can reappear; they are gitignored.

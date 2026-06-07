@@ -1,4 +1,4 @@
-# Testing — Sea Tree
+# Testing — The SeaTree
 
 Browser tests for the static site. Catches the bug class /qa is built to find:
 broken layouts, contrast failures, carousel/calendar regressions on mobile.
