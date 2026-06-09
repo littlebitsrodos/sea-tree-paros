@@ -7,6 +7,7 @@
     "test:placeholders": "node scripts/check_locale_placeholder_contract.mjs",
     "test:bookings-sync": "python3 scripts/test_sync_bookings.py",
     "test:bookings-parity": "python3 scripts/test_live_bookings_parity.py",
+    "test:price-parity": "node scripts/check_price_parity_contract.mjs",
     "test:schema": "node scripts/check_vacation_rental_schema_contract.mjs",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
