@@ -82,4 +82,5 @@ python3 scripts/build_locales.py
 - Keep public images in `images/optimized/`.
 - Keep source assets in `images/source/`.
 - Keep local-only clutter out of the root; use `archive/local-*` when needed.
+- Keep booking/inquiry CTAs direct-first: WhatsApp, phone, email, Airbnb, and Booking.com. Do not add placeholder payment links or stale form code.
 - Bump `CACHE_NAME` in `sw.js` when cached public assets change.

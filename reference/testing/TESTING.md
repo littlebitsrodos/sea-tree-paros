@@ -59,8 +59,8 @@ Override with `PORT=8080 npm test` if 4173 is in use.
   bugs reproduce in either engine, but iOS-specific behavior (touch callouts,
   overflow scroll bounce) is not exercised. Swap the `mobile` project to
   `devices['iPhone 13']` and `npx playwright install webkit` if you need that.
-- **Contact form submission.** We don't POST to Formspree from tests.
-- **Stripe / Airbnb / Booking.com flows.** External; out of scope.
+- **Real outbound contact submission.** We don't open WhatsApp, send email, or follow Airbnb / Booking.com flows.
+- **Direct contact contract.** `tests/direct-contact-contract.spec.js` asserts the booking surface stays direct-first and does not regress to stale Formspree or placeholder payment code.
 
 ## Adding tests
 

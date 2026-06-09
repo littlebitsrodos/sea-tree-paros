@@ -1,6 +1,6 @@
 // =====================================================
-// ROMANTICA BLUE — Main JavaScript
-// Language switcher, calendar, gallery lightbox, forms
+// The SeaTree — Main JavaScript
+// Language switcher, calendar, gallery lightbox, direct inquiries
 // =====================================================
 
 // Apply the preloaded full stylesheet after the critical inline CSS has covered
@@ -36,26 +36,8 @@ const PRICING = {
     currency: '€'
 };
 
-// ----- Stripe Payment Links -----
-// Replace these placeholder URLs with your actual Stripe Payment Links
-// Create products in Stripe Dashboard, then create Payment Links with quantity enabled
-const STRIPE_LINKS = {
-    low: '#',   // Replace with: https://buy.stripe.com/YOUR_LOW_SEASON_LINK
-    mid: '#',   // Replace with: https://buy.stripe.com/YOUR_MID_SEASON_LINK
-    peak: '#'   // Replace with: https://buy.stripe.com/YOUR_PEAK_SEASON_LINK
-};
-
-// Get payment link for the check-in date's season
-function getPaymentLink(checkInDate, nights) {
-    const season = getSeasonForDate(checkInDate);
-    const baseUrl = STRIPE_LINKS[season];
-
-    // If no link configured yet, return placeholder
-    if (baseUrl === '#') return '#';
-
-    // Add quantity parameter for number of nights
-    return `${baseUrl}?quantity=${nights}`;
-}
+const HOST_PHONE_E164 = '306973286811';
+const HOST_EMAIL = 'antocosto@gmail.com';
 
 // ----- Availability Source -----
 // /bookings.json is regenerated at deploy time (and every 2h via cron)
@@ -95,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGallery();
     initCalendar();
-    initContactForm();
     initScrollAnimations();
     // initConsentBanner();  // Paused with GA4 — re-enable when seatree.gr Property ID is set
 
@@ -666,7 +647,6 @@ function handleDateClick(dateStr) {
     }
 
     renderCalendar();
-    syncDatesToForm();
 }
 
 // Check if a date is within the selected range
@@ -697,43 +677,39 @@ function updateSelectionDisplay() {
     if (selectedCheckIn && selectedCheckOut) {
         const nights = calculateNights(selectedCheckIn, selectedCheckOut);
         const totalPrice = calculateTotalPrice(selectedCheckIn, selectedCheckOut);
-        const paymentUrl = getPaymentLink(selectedCheckIn, nights);
+        const inquiryLinks = buildInquiryLinks(selectedCheckIn, selectedCheckOut, nights, totalPrice);
+        const t = translations[currentLang].booking;
 
         display.innerHTML = `
             <div class="selection-info">
                 <span class="selection-dates">
-                    <strong>Check-in:</strong> ${formatDisplayDate(selectedCheckIn)} → 
-                    <strong>Check-out:</strong> ${formatDisplayDate(selectedCheckOut)}
+                    <strong>${t.selectionCheckIn}:</strong> ${formatDisplayDate(selectedCheckIn)} →
+                    <strong>${t.selectionCheckOut}:</strong> ${formatDisplayDate(selectedCheckOut)}
                 </span>
-                <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''} — <strong class="price-highlight">${PRICING.currency}${totalPrice}</strong></span>
+                <span class="selection-nights">${formatNightsLabel(nights)} — <strong class="price-highlight">${PRICING.currency}${totalPrice}</strong></span>
             </div>
             <div class="selection-actions">
-                <button class="clear-selection-btn">Clear</button>
-                <a href="${paymentUrl}" target="_blank" rel="noopener noreferrer" class="book-now-btn">
-                    Book Now
+                <button class="clear-selection-btn">${t.clearSelection}</button>
+                <a href="${inquiryLinks.whatsapp}" target="_blank" rel="noopener noreferrer" class="inquiry-action inquiry-action-primary">
+                    ${t.inquireWhatsapp}
+                </a>
+                <a href="${inquiryLinks.email}" class="inquiry-action">
+                    ${t.inquireEmail}
                 </a>
             </div>
         `;
 
-        // Attach event listeners (CSP compliance)
         const clearBtn = display.querySelector('.clear-selection-btn');
         if (clearBtn) clearBtn.addEventListener('click', clearDateSelection);
 
-        const bookBtn = display.querySelector('.book-now-btn');
-        if (bookBtn && paymentUrl === '#') {
-            bookBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('Payment links coming soon! Please use the contact form below.');
-            });
-        }
-
         display.style.display = 'flex';
     } else if (selectedCheckIn) {
+        const t = translations[currentLang].booking;
         display.innerHTML = `
             <div class="selection-info">
-                <span class="selection-dates">Check-in: ${formatDisplayDate(selectedCheckIn)} — Select check-out date</span>
+                <span class="selection-dates">${t.selectionCheckIn}: ${formatDisplayDate(selectedCheckIn)} — ${t.selectCheckout}</span>
             </div>
-            <button class="clear-selection-btn">Clear</button>
+            <button class="clear-selection-btn">${t.clearSelection}</button>
         `;
 
         const clearBtn = display.querySelector('.clear-selection-btn');
@@ -759,122 +735,38 @@ function calculateNights(checkIn, checkOut) {
     return Math.round((end - start) / (1000 * 60 * 60 * 24));
 }
 
+function formatNightsLabel(nights) {
+    const t = translations[currentLang].booking;
+    const key = nights === 1 ? 'nightSingular' : 'nightPlural';
+    return t[key].replace('{nights}', String(nights));
+}
+
+function buildInquiryLinks(checkIn, checkOut, nights, totalPrice) {
+    const t = translations[currentLang].booking;
+    const values = {
+        checkIn: formatDisplayDate(checkIn),
+        checkOut: formatDisplayDate(checkOut),
+        nights: String(nights),
+        totalPrice: `${PRICING.currency}${totalPrice}`
+    };
+    const subject = fillTemplate(t.inquirySubject, values);
+    const body = fillTemplate(t.inquiryBody, values);
+
+    return {
+        whatsapp: `https://wa.me/${HOST_PHONE_E164}?text=${encodeURIComponent(body)}`,
+        email: `mailto:${HOST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    };
+}
+
+function fillTemplate(template, values) {
+    return template.replace(/\{(\w+)\}/g, (_, key) => values[key] || '');
+}
+
 // Clear date selection
 function clearDateSelection() {
     selectedCheckIn = null;
     selectedCheckOut = null;
     renderCalendar();
-    syncDatesToForm();
-}
-
-// Sync selected dates to the contact form
-function syncDatesToForm() {
-    const datesInput = document.getElementById('dates');
-    if (!datesInput) return;
-
-    if (selectedCheckIn && selectedCheckOut) {
-        datesInput.value = `${formatDisplayDate(selectedCheckIn)} - ${formatDisplayDate(selectedCheckOut)}`;
-        // Removed auto-scroll so user can see price
-    } else {
-        datesInput.value = '';
-    }
-}
-
-// ----- Contact Form -----
-function initContactForm() {
-    const form = document.querySelector('.contact-form form');
-
-    if (form) {
-        // Rate limiting: max 3 submissions per 5 minutes
-        const RATE_LIMIT = { maxSubmissions: 3, windowMs: 5 * 60 * 1000 };
-        let submissions = JSON.parse(sessionStorage.getItem('formSubmissions') || '[]');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Clean old submissions outside the window
-            const now = Date.now();
-            submissions = submissions.filter(time => now - time < RATE_LIMIT.windowMs);
-
-            // Check rate limit
-            if (submissions.length >= RATE_LIMIT.maxSubmissions) {
-                showFormMessage('Too many submissions. Please try again in a few minutes.', 'error');
-                return;
-            }
-
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-
-            // Basic validation
-            if (!data.name || !data.email || !data.message) {
-                showFormMessage('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            if (!isValidEmail(data.email)) {
-                showFormMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Honeypot check (if field exists and is filled, it's a bot)
-            if (data.website) {
-                console.log('Bot detected');
-                showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
-                form.reset();
-                return;
-            }
-
-            // Submit to Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Track submission for rate limiting on success
-                    submissions.push(now);
-                    sessionStorage.setItem('formSubmissions', JSON.stringify(submissions));
-
-                    showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
-                    form.reset();
-                } else {
-                    showFormMessage('Oops! There was a problem sending your message.', 'error');
-                }
-            }).catch(error => {
-                showFormMessage('Oops! There was a problem sending your message.', 'error');
-            });
-        });
-    }
-}
-
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function showFormMessage(message, type) {
-    const feedback = document.querySelector('.form-feedback');
-    if (!feedback) return;
-
-    feedback.textContent = message;
-    feedback.className = `form-feedback form-message ${type}`;
-    feedback.style.cssText = `
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    ${type === 'success'
-            ? 'background: #d4edda; color: #155724;'
-            : 'background: #f8d7da; color: #721c24;'}
-  `;
-
-    setTimeout(() => {
-        feedback.textContent = '';
-        feedback.className = 'form-feedback';
-        feedback.removeAttribute('style');
-    }, 5000);
 }
 
 // ----- Scroll Animations -----

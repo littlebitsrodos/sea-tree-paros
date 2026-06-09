@@ -8,6 +8,7 @@
     "test:bookings-sync": "python3 scripts/test_sync_bookings.py",
     "test:bookings-parity": "python3 scripts/test_live_bookings_parity.py",
     "test:price-parity": "node scripts/check_price_parity_contract.mjs",
+    "test:direct-contact": "node scripts/check_direct_contact_contract.mjs",
     "test:schema": "node scripts/check_vacation_rental_schema_contract.mjs",
     "test:unit": "npm run test:pwa-cache && npm run test:placeholders && npm run test:bookings-sync && npm run test:bookings-parity && npm run test:price-parity && npm run test:schema",
     "preflight": "python3 scripts/build_locales.py && npm run test:unit && npm test",
