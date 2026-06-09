@@ -65,6 +65,12 @@ Run tests:
 npm test
 ```
 
+Run the full local preflight before handoff:
+
+```bash
+npm run preflight
+```
+
 Rebuild locale pages:
 
 ```bash

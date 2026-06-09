@@ -1,6 +1,6 @@
 # sea-tree-paros Project Context
 
-Date: 2026-05-10
+Date: 2026-06-09
 
 This document captures project-specific working context for `sea-tree-paros`.
 It is descriptive project memory, not a general development best-practices document.
@@ -10,8 +10,8 @@ It is descriptive project memory, not a general development best-practices docum
 - Path on Mac mini: `/Users/neuralnode/Projects/sea-tree-paros`
 - Git remote: `https://github.com/littlebitsrodos/sea-tree-paros.git`
 - Branch: `main`
-- Last observed commit: `5ee0a24 feat: add guest services and arrival info`
-- Status observed on 2026-05-10: `main...origin/main`, dirty worktree.
+- Last observed commit: `8a8c111 Merge pull request #5 from littlebitsrodos/codex/recover-main-local-seo-facts-20260609`
+- Status observed on 2026-06-09: `main...origin/main`, clean worktree.
 
 ## Historical Worktree Snapshot
 
@@ -85,18 +85,10 @@ availability, and contact.
 
 ## Current Active Task
 
-Minimal logo.
+No persistent active task is recorded here. Treat task-specific notes as
+ephemeral unless the human explicitly asks to preserve them.
 
-Useful starting point:
-
-- `favicon.svg` already contains a simple wave mark.
-- Header and footer use the `.logo` text style rather than an image/logo component.
-- If the logo change touches `favicon.svg`, `styles.css`, `index.html`, or `translations.js`, remember:
-  - bump `CACHE_NAME` in `sw.js` for cached asset changes;
-  - rebuild locale pages if `index.html` body or `translations.js` changes;
-  - keep the logo usable in small favicon/app-icon contexts and in the fixed nav.
-
-Architecture follow-up sessions are tracked in `reference/architecture/ARCHITECTURE_SESSIONS.md`.
+Architecture follow-up sessions are tracked in `reference/architecture/ARCHITECTURE_SESSIONS.md` when that file exists.
 
 ## Development Commands
 
@@ -112,6 +104,12 @@ Run tests:
 ```bash
 cd /Users/neuralnode/Projects/sea-tree-paros
 npm test
+```
+
+Full local preflight:
+
+```bash
+npm run preflight
 ```
 
 Mobile-only tests:

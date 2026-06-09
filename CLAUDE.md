@@ -59,6 +59,26 @@ npm test
 
 Browser tests live in `tests/` and cover layout overflow, contrast, carousel/calendar behavior, and locales.
 
+Run the full agent preflight before handing off broad or release-facing changes:
+
+```bash
+npm run preflight
+```
+
+`preflight` rebuilds locale pages, runs the unit/contract checks, then runs the Playwright suite.
+Use focused checks for narrower edits:
+
+```bash
+npm run test:unit
+npm run test:mobile
+npm run test:pwa-cache
+npm run test:placeholders
+npm run test:bookings-sync
+npm run test:bookings-parity
+npm run test:price-parity
+npm run test:schema
+```
+
 ## Deployment Notes
 
 - CI runs `scripts/build_locales.py` before deploy.
