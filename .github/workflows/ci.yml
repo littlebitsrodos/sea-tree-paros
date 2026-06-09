@@ -91,6 +91,7 @@ jobs:
     # Deploy on push, schedule, manual dispatch — never on pull_request.
     # Requires test success when test ran; runs anyway when test was skipped (cron).
     if: |
+      always() &&
       github.event_name != 'pull_request' &&
       (needs.test.result == 'success' || needs.test.result == 'skipped')
     needs: [test]
