@@ -5,8 +5,34 @@ User-agent: *
 Allow: /
 Disallow: /bookings.json
 
-# Sitemap location
-Sitemap: https://seatree.gr/sitemap.xml
-
 # Crawl-delay for polite crawling (Bingbot honors this; Googlebot ignores it)
 Crawl-delay: 1
+
+# AI/search discovery crawlers. These rules make the intent explicit while
+# keeping freshness-critical booking data private.
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /bookings.json
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /bookings.json
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /bookings.json
+
+User-agent: Claude-User
+Allow: /
+Disallow: /bookings.json
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /bookings.json
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /bookings.json
+
+# Sitemap location
+Sitemap: https://seatree.gr/sitemap.xml

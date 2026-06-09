@@ -51,6 +51,21 @@ const translations = {
       }
     },
 
+    // Quick Facts
+    facts: {
+      label: "Quick Facts",
+      title: "The SeaTree at a Glance",
+      subtitle: "Clear details for planning your Paros stay",
+      items: {
+        property: { label: "Property", title: "Entire beachfront apartment", desc: "Private vacation rental in Aliki Beach, south Paros." },
+        capacity: { label: "Capacity", title: "Sleeps 4 guests", desc: "Two bedrooms, two bathrooms, and a dedicated yoga room." },
+        internet: { label: "Internet", title: "Starlink Wi-Fi", desc: "Reliable high-speed connection for remote work and longer stays." },
+        location: { label: "Location", title: "Aliki, Paros", desc: "2 km from Paros Airport and 2 minutes on foot from Aliki village." },
+        beach: { label: "Beach", title: "Sea access nearby", desc: "Rocky shoreline by the house, with sandy beaches 1-5 minutes away." },
+        bestFor: { label: "Best For", title: "Couples, families, slow travel", desc: "A quiet base for beach days, local tavernas, and calm south Paros mornings." }
+      }
+    },
+
     // Gallery
     gallery: {
       label: "Gallery",
@@ -301,6 +316,21 @@ const translations = {
       highlight: {
         title: "Un Toque de Historia",
         text: "Pregunta a los locales sobre Romantica — sonreirán y compartirán historias de las mejores fiestas de la isla. Ahora el sonido más fuerte es el del mar."
+      }
+    },
+
+    // Quick Facts
+    facts: {
+      label: "Datos Clave",
+      title: "The SeaTree de un Vistazo",
+      subtitle: "Detalles claros para planificar tu estancia en Paros",
+      items: {
+        property: { label: "Propiedad", title: "Apartamento completo frente al mar", desc: "Alquiler vacacional privado en la playa de Aliki, sur de Paros." },
+        capacity: { label: "Capacidad", title: "Hasta 4 huéspedes", desc: "Dos dormitorios, dos baños y una sala de yoga dedicada." },
+        internet: { label: "Internet", title: "Wi-Fi Starlink", desc: "Conexión fiable de alta velocidad para teletrabajo y estancias largas." },
+        location: { label: "Ubicación", title: "Aliki, Paros", desc: "A 2 km del aeropuerto de Paros y a 2 minutos a pie del pueblo de Aliki." },
+        beach: { label: "Playa", title: "Acceso al mar cerca", desc: "Costa rocosa junto a la casa y playas de arena a 1-5 minutos." },
+        bestFor: { label: "Ideal Para", title: "Parejas, familias, viajes lentos", desc: "Una base tranquila para días de playa, tabernas locales y mañanas serenas en el sur de Paros." }
       }
     },
 
@@ -557,6 +587,21 @@ const translations = {
       }
     },
 
+    // Quick Facts
+    facts: {
+      label: "Βασικά Στοιχεία",
+      title: "Το The SeaTree με μια Ματιά",
+      subtitle: "Καθαρά στοιχεία για να οργανώσετε τη διαμονή σας στην Πάρο",
+      items: {
+        property: { label: "Κατάλυμα", title: "Ολόκληρο διαμέρισμα μπροστά στη θάλασσα", desc: "Ιδιωτική εξοχική κατοικία στην Αλυκή, στη νότια Πάρο." },
+        capacity: { label: "Χωρητικότητα", title: "Φιλοξενεί 4 επισκέπτες", desc: "Δύο υπνοδωμάτια, δύο μπάνια και ξεχωριστό δωμάτιο yoga." },
+        internet: { label: "Internet", title: "Wi-Fi Starlink", desc: "Αξιόπιστη σύνδεση υψηλής ταχύτητας για τηλεργασία και μεγαλύτερες διαμονές." },
+        location: { label: "Τοποθεσία", title: "Αλυκή, Πάρος", desc: "2 χλμ από το αεροδρόμιο Πάρου και 2 λεπτά με τα πόδια από το χωριό της Αλυκής." },
+        beach: { label: "Παραλία", title: "Κοντινή πρόσβαση στη θάλασσα", desc: "Βραχώδης ακτή δίπλα στο σπίτι και αμμώδεις παραλίες σε 1-5 λεπτά." },
+        bestFor: { label: "Ιδανικό Για", title: "Ζευγάρια, οικογένειες, ήρεμα ταξίδια", desc: "Μια ήσυχη βάση για μέρες στην παραλία, τοπικές ταβέρνες και ήρεμα πρωινά στη νότια Πάρο." }
+      }
+    },
+
     // Gallery
     gallery: {
       label: "Γκαλερί",
@@ -807,6 +852,21 @@ const translations = {
       highlight: {
         title: "Une Touche d'Histoire",
         text: "Demandez aux locaux à propos de Romantica — ils souriront et partageront des histoires des meilleures fêtes de l'île. Maintenant, le bruit le plus fort est celui de la mer."
+      }
+    },
+
+    // Quick Facts
+    facts: {
+      label: "Infos Clés",
+      title: "The SeaTree en Bref",
+      subtitle: "Des détails clairs pour préparer votre séjour à Paros",
+      items: {
+        property: { label: "Logement", title: "Appartement entier en bord de mer", desc: "Location de vacances privée à la plage d'Aliki, au sud de Paros." },
+        capacity: { label: "Capacité", title: "Jusqu'à 4 voyageurs", desc: "Deux chambres, deux salles de bain et une salle de yoga dédiée." },
+        internet: { label: "Internet", title: "Wi-Fi Starlink", desc: "Connexion fiable haut débit pour le télétravail et les longs séjours." },
+        location: { label: "Emplacement", title: "Aliki, Paros", desc: "À 2 km de l'aéroport de Paros et à 2 minutes à pied du village d'Aliki." },
+        beach: { label: "Plage", title: "Accès à la mer à proximité", desc: "Rivage rocheux près de la maison et plages de sable à 1-5 minutes." },
+        bestFor: { label: "Idéal Pour", title: "Couples, familles, slow travel", desc: "Une base calme pour les journées plage, les tavernes locales et les matins paisibles du sud de Paros." }
       }
     },
 

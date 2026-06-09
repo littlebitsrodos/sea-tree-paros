@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://seatree.gr/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/es/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/el/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/fr/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/privacy/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/es/privacy/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/el/privacy/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://seatree.gr/fr/privacy/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
