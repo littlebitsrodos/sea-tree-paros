@@ -55,6 +55,9 @@ jobs:
       - name: Run booking sync unit tests
         run: python3 scripts/test_sync_bookings.py
 
+      - name: Run live booking parity unit tests
+        run: python3 scripts/test_live_bookings_parity.py
+
       - name: Install dependencies
         run: npm ci
 
@@ -137,3 +140,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify live availability parity
+        run: >
+          python3 scripts/check_live_bookings_parity.py
+          --expected bookings.json
+          --url https://seatree.gr/bookings.json
+          --timeout 600
+          --interval 15
