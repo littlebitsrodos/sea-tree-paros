@@ -2,6 +2,23 @@
 
 Static vacation-rental site for The SeaTree, Aliki Beach, Paros.
 
+## Communication
+
+- Speak to the human in Greek.
+- Be direct and concise. State risks, blockers, and verification status clearly.
+- Prefer doing the work end to end over stopping at a plan, unless the request is explicitly exploratory.
+
+## Working Model
+
+- Prefer a dedicated `git worktree` per task, branch, or parallel stream.
+- Before editing, check `git status --short --branch` and `git worktree list`.
+- Treat `origin/main` on GitHub as the source of truth. The human often works from mobile through Hermes agent on a different Mac mini profile, so local branches may be stale.
+- Before starting or resuming work, fetch/prune and fast-forward the local base branch when possible.
+- Do not mix unrelated changes from other branches, worktrees, or user edits.
+- Keep changes scoped. Avoid broad refactors unless they are required for the task.
+- Preserve user changes. Never reset, restore, or delete unrelated work unless explicitly asked.
+- After a branch is merged, clean up its temporary worktree and stale refs.
+
 ## Stack
 
 - Plain HTML, CSS, and vanilla ES modules. No build step.
@@ -32,6 +49,7 @@ Static vacation-rental site for The SeaTree, Aliki Beach, Paros.
 - New photo drops and working source assets should go under `images/source/` (`imports/`, `real/`, `ai/`, `misc/`).
 - Scripts should stay as `<script defer>` in `<head>`.
 - New user-facing copy needs a `data-translate` key plus entries in all four languages.
+- Keep generated locale pages synchronized, but do not hand-edit them.
 - After changing `translations.js` or translated body copy in `index.html`, run:
 
 ```bash
@@ -40,6 +58,7 @@ python3 scripts/build_locales.py
 
 - If a cached file changes, bump the cache version in `sw.js`.
 - Keep The SeaTree as the brand. Do not remove historical references to Romantica when they describe the former disco/bar history.
+- Keep the direct-contact booking flow consistent across visible copy, links, structured data, privacy pages, and tests.
 
 ## Local Work
 
@@ -75,9 +94,22 @@ npm run test:pwa-cache
 npm run test:placeholders
 npm run test:bookings-sync
 npm run test:bookings-parity
+npm run test:direct-contact
 npm run test:price-parity
 npm run test:schema
 ```
+
+Choose the narrowest useful verification for small edits, but run `npm run preflight` before broad, release-facing, or cross-locale changes.
+
+## Source Control And Handoff
+
+- Use small branches with descriptive names, usually under `codex/`.
+- Commit only the files that belong to the task.
+- Before opening a PR, check the diff with `git diff --stat` and verify there are no accidental generated or local artifacts.
+- For PRs, include a concise summary and the exact verification performed.
+- Do not force-push to protected/shared branches.
+- Prefer merge only after CI passes. If CI is pending, wait; if it fails, inspect the failure before retrying or merging.
+- After merge, fetch/prune, fast-forward local `main`, and remove the task worktree when it is clean.
 
 ## Deployment Notes
 
