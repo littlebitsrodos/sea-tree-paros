@@ -112,6 +112,14 @@ const translations = {
       ]
     },
 
+    // Guest Reviews
+    reviews: {
+      label: "Guest Reviews",
+      title: "What Guests Are Saying",
+      subtitle: "Early guest feedback from Booking.com and Airbnb",
+      readOn: "Read this review on"
+    },
+
     // Amenities
     amenities: {
       label: "Amenities",
@@ -388,6 +396,14 @@ const translations = {
         "Desde arriba se entiende claramente la ubicación de The SeaTree.",
         "El pueblo de Aliki, la bahía y tu estancia en una sola vista."
       ]
+    },
+
+    // Guest Reviews
+    reviews: {
+      label: "Opiniones de Huéspedes",
+      title: "Lo Que Dicen los Huéspedes",
+      subtitle: "Primeras opiniones de huéspedes en Booking.com y Airbnb",
+      readOn: "Leer esta opinión en"
     },
 
     // Amenities
@@ -668,6 +684,14 @@ const translations = {
       ]
     },
 
+    // Guest Reviews
+    reviews: {
+      label: "Κριτικές Επισκεπτών",
+      title: "Τι Λένε οι Επισκέπτες",
+      subtitle: "Οι πρώτες κριτικές επισκεπτών από Booking.com και Airbnb",
+      readOn: "Διαβάστε αυτή την κριτική στο"
+    },
+
     // Amenities
     amenities: {
       label: "Παροχές",
@@ -944,6 +968,14 @@ const translations = {
         "Depuis le ciel, l’emplacement de The SeaTree devient évident.",
         "Le village d’Aliki, la baie et votre séjour dans une seule vue."
       ]
+    },
+
+    // Guest Reviews
+    reviews: {
+      label: "Avis des Voyageurs",
+      title: "Ce Que Disent les Voyageurs",
+      subtitle: "Premiers avis de voyageurs sur Booking.com et Airbnb",
+      readOn: "Lire cet avis sur"
     },
 
     // Amenities

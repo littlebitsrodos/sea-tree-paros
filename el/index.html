@@ -273,6 +273,7 @@
   <!-- <script src="/analytics.js" defer></script> -->
   <!-- <script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" defer></script> -->
   <script src="/translations.js" defer></script>
+  <script src="/reviews.js" defer></script>
   <script src="/script.js" defer></script>
 </head>
 
@@ -729,6 +730,19 @@
       <div class="gallery-view-all-wrap">
         <button type="button" class="btn btn-secondary gallery-view-all" data-translate="gallery.viewAll">Δείτε όλες τις φωτογραφίες</button>
       </div>
+    </div>
+  </section>
+
+  <!-- Guest Reviews Section -->
+  <section id="reviews" class="reviews-section">
+    <div class="container">
+      <div class="section-header reviews-header">
+        <span class="section-label" data-translate="reviews.label">Κριτικές Επισκεπτών</span>
+        <h2 data-translate="reviews.title">Τι Λένε οι Επισκέπτες</h2>
+        <p data-translate="reviews.subtitle">Οι πρώτες κριτικές επισκεπτών από Booking.com και Airbnb</p>
+      </div>
+
+      <div class="reviews-grid" id="reviews-grid" aria-live="polite"></div>
     </div>
   </section>
 

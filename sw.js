@@ -1,13 +1,14 @@
 // PWA asset cache contract:
 // When any asset in ASSETS_TO_CACHE changes, add/remove its path here as needed
 // and bump this version so returning visitors receive the update.
-const CACHE_NAME = 'sea-tree-v45';
+const CACHE_NAME = 'sea-tree-v46';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './manifest.json',
     './styles.css',
     './script.js',
+    './reviews.js',
     './translations.js',
     './offline.html',
     './favicon.svg'

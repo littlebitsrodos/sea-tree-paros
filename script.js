@@ -77,12 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGallery();
     initCalendar();
-    initScrollAnimations();
     // initConsentBanner();  // Paused with GA4 — re-enable when seatree.gr Property ID is set
 
     // Set initial language from the URL-resolved locale (not hardcoded 'en',
     // which would clobber the pre-translated /es/, /el/, /fr/ HTML back to English).
     setLanguage(currentLang);
+    initScrollAnimations();
 });
 
 // ----- Cookie Consent (GA4 Consent Mode v2) -----
@@ -168,8 +168,85 @@ function setLanguage(lang) {
     // Update HTML lang attribute
     document.documentElement.lang = lang === 'el' ? 'el' : lang;
 
+    renderReviews();
+
     // Refresh calendar with new language
     renderCalendar();
+}
+
+// ----- Guest Reviews -----
+function getLocalizedReviewValue(value, lang) {
+    if (!value || typeof value !== 'object') return value || '';
+    return value[lang] || value.en || '';
+}
+
+function renderReviews() {
+    const grid = document.getElementById('reviews-grid');
+    const reviews = window.seaTreeReviews || [];
+    if (!grid || !reviews.length) return;
+
+    const t = translations[currentLang]?.reviews || translations.en.reviews;
+    grid.replaceChildren();
+
+    reviews
+        .filter(review => review.featured)
+        .forEach((review, index) => {
+            const article = document.createElement('article');
+            article.className = index === 0 ? 'review-card review-card-featured' : 'review-card';
+
+            const header = document.createElement('div');
+            header.className = 'review-card-header';
+
+            const source = document.createElement('div');
+            source.className = 'review-source';
+
+            const platform = document.createElement('a');
+            platform.className = 'review-platform';
+            platform.href = review.url;
+            platform.target = '_blank';
+            platform.rel = 'noopener noreferrer';
+            platform.textContent = review.platform;
+            platform.setAttribute('aria-label', `${t.readOn} ${review.platform}`);
+
+            const context = document.createElement('span');
+            context.className = 'review-context';
+            context.textContent = getLocalizedReviewValue(review.stayContext, currentLang);
+
+            source.append(platform, context);
+
+            const rating = document.createElement('span');
+            rating.className = 'review-rating';
+            rating.textContent = review.ratingLabel;
+            rating.setAttribute('aria-label', getLocalizedReviewValue(review.ratingAriaLabel, currentLang));
+
+            header.append(source, rating);
+
+            const quote = document.createElement('blockquote');
+            quote.className = 'review-quote';
+            quote.textContent = getLocalizedReviewValue(review.quote, currentLang);
+
+            const highlight = document.createElement('p');
+            highlight.className = 'review-highlight';
+            highlight.textContent = getLocalizedReviewValue(review.highlight, currentLang);
+
+            const footer = document.createElement('footer');
+            footer.className = 'review-footer';
+
+            const country = getLocalizedReviewValue(review.country, currentLang);
+            const guestParts = [review.guestName, country].filter(Boolean);
+
+            const guest = document.createElement('span');
+            guest.className = 'review-guest';
+            guest.textContent = guestParts.join(', ');
+
+            const date = document.createElement('span');
+            date.className = 'review-date';
+            date.textContent = getLocalizedReviewValue(review.dateLabel, currentLang);
+
+            footer.append(guest, date);
+            article.append(header, quote, highlight, footer);
+            grid.appendChild(article);
+        });
 }
 
 // ----- Navigation -----
@@ -786,7 +863,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Observe all sections
-    document.querySelectorAll('section, .amenity-card, .bedroom-card').forEach(el => {
+    document.querySelectorAll('section, .amenity-card, .review-card, .bedroom-card').forEach(el => {
         el.style.opacity = '0';
         observer.observe(el);
     });
