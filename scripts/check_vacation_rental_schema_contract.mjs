@@ -31,11 +31,31 @@ export function assertVacationRentalSchemaContract() {
 
   assert.equal(typeof schema.identifier, 'string', 'VacationRental identifier must be a string');
   assert.match(schema.identifier, /\S/, 'VacationRental identifier must not be empty');
+  assert.equal(schema.hasMap, 'https://www.google.com/maps/search/?api=1&query=36.9932,25.0518', 'VacationRental must expose a map URL');
+
+  assert.ok(Array.isArray(schema.sameAs), 'VacationRental sameAs must be an array');
+  assert.ok(
+    schema.sameAs.includes('https://www.airbnb.com/rooms/1659626910469787873'),
+    'VacationRental sameAs must include Airbnb'
+  );
+  assert.ok(
+    schema.sameAs.includes('https://www.booking.com/hotel/gr/aliki-seafront-luxury-apartment.en-gb.html'),
+    'VacationRental sameAs must include Booking.com'
+  );
+
+  const amenityNames = new Set(schema.amenityFeature?.map((amenity) => amenity.name));
+  for (const requiredAmenity of ['wifi', 'ac', 'kitchen', 'beachAccess', 'washerDryer']) {
+    assert.ok(amenityNames.has(requiredAmenity), `VacationRental amenities must include ${requiredAmenity}`);
+  }
 
   assertOccupancyShape(schema, 'VacationRental');
 
   assert.ok(Array.isArray(schema.containsPlace), 'VacationRental containsPlace must be an array');
   assert.ok(schema.containsPlace.length > 0, 'VacationRental containsPlace must not be empty');
+  assert.ok(
+    schema.containsPlace.some((place) => place.additionalType === 'EntirePlace'),
+    'VacationRental containsPlace must include the entire place'
+  );
 
   for (const place of schema.containsPlace) {
     assertOccupancyShape(place, `containsPlace "${place.name ?? 'unknown'}"`);

@@ -52,9 +52,18 @@
     "name": "The SeaTree",
     "description": "The SeaTree — a unique vacation rental in Aliki Beach, Paros, Greece. This beautiful blue haven was once the legendary Romantica disco bar — the heartbeat of Paros nightlife. Today, those same walls have been lovingly transformed into a serene island retreat.",
     "url": "https://seatree.gr",
+    "mainEntityOfPage": "https://seatree.gr/",
     "identifier": "Airbnb 1659626910469787873",
     "additionalType": "https://schema.org/Apartment",
+    "keywords": "The SeaTree, Paros vacation rental, Aliki Beach, beachfront apartment, south Paros, family friendly, remote work, Starlink internet",
+    "telephone": "+306973286811",
+    "email": "antocosto@gmail.com",
     "priceRange": "€400-€800 per night",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=36.9932,25.0518",
+    "sameAs": [
+      "https://www.airbnb.com/rooms/1659626910469787873",
+      "https://www.booking.com/hotel/gr/aliki-seafront-luxury-apartment.en-gb.html"
+    ],
     "image": [
       "https://seatree.gr/images/optimized/webp/drone/drone-top-down-boats-in-clear-water.webp",
       "https://seatree.gr/images/optimized/waterfront-house-clear-bay.webp",
@@ -88,20 +97,53 @@
       "maxValue": 4
     },
     "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Starlink Internet", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Full Kitchen", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Free Public Parking", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Large Balcony", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Washing Machine", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Yoga Room", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Sea Towels", "value": true }
+      { "@type": "LocationFeatureSpecification", "name": "wifi", "value": true, "description": "Starlink high-speed internet" },
+      { "@type": "LocationFeatureSpecification", "name": "ac", "value": true, "description": "Air conditioning in every room" },
+      { "@type": "LocationFeatureSpecification", "name": "kitchen", "value": true, "description": "Full kitchen" },
+      { "@type": "LocationFeatureSpecification", "name": "parking", "value": true, "description": "Free public street parking" },
+      { "@type": "LocationFeatureSpecification", "name": "balcony", "value": true, "description": "Large southeast-facing balcony" },
+      { "@type": "LocationFeatureSpecification", "name": "washerDryer", "value": true, "description": "Washing machine" },
+      { "@type": "LocationFeatureSpecification", "name": "beachAccess", "value": true, "description": "Rocky shoreline by the house and sandy beaches nearby" },
+      { "@type": "LocationFeatureSpecification", "name": "childFriendly", "value": true, "description": "Children of all ages welcome" },
+      { "@type": "LocationFeatureSpecification", "name": "crib", "value": true, "description": "Cots available free of charge" }
     ],
     "checkinTime": "15:00",
     "checkoutTime": "11:00",
     "petsAllowed": false,
     "tourBookingPage": "https://seatree.gr/#contact",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": [
+        {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.airbnb.com/rooms/1659626910469787873",
+          "name": "Book The SeaTree on Airbnb"
+        },
+        {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.booking.com/hotel/gr/aliki-seafront-luxury-apartment.en-gb.html",
+          "name": "Book The SeaTree on Booking.com"
+        },
+        {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://seatree.gr/#contact",
+          "name": "Contact The SeaTree host directly"
+        }
+      ]
+    },
     "containsPlace": [
+      {
+        "@type": "Accommodation",
+        "additionalType": "EntirePlace",
+        "name": "The SeaTree beachfront apartment",
+        "numberOfBedrooms": 2,
+        "numberOfBathroomsTotal": 2,
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "value": 4,
+          "maxValue": 4
+        }
+      },
       {
         "@type": "Accommodation",
         "additionalType": "https://schema.org/Room",
@@ -326,6 +368,50 @@
             sizes="(max-width: 1024px) 100vw, 50vw"
             alt="The SeaTree living room opening to the sea" loading="lazy" width="1200" height="900">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Facts Section -->
+  <section id="quick-facts" class="facts-section" aria-labelledby="quick-facts-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-translate="facts.label">Datos Clave</span>
+        <h2 id="quick-facts-title" data-translate="facts.title">The SeaTree de un Vistazo</h2>
+        <p data-translate="facts.subtitle">Detalles claros para planificar tu estancia en Paros</p>
+      </div>
+
+      <div class="facts-grid">
+        <article class="fact-card">
+          <span class="fact-kicker" data-translate="facts.items.property.label">Propiedad</span>
+          <h3 data-translate="facts.items.property.title">Apartamento completo frente al mar</h3>
+          <p data-translate="facts.items.property.desc">Alquiler vacacional privado en la playa de Aliki, sur de Paros.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-kicker" data-translate="facts.items.capacity.label">Capacidad</span>
+          <h3 data-translate="facts.items.capacity.title">Hasta 4 huéspedes</h3>
+          <p data-translate="facts.items.capacity.desc">Dos dormitorios, dos baños y una sala de yoga dedicada.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-kicker" data-translate="facts.items.internet.label">Internet</span>
+          <h3 data-translate="facts.items.internet.title">Wi-Fi Starlink</h3>
+          <p data-translate="facts.items.internet.desc">Conexión fiable de alta velocidad para teletrabajo y estancias largas.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-kicker" data-translate="facts.items.location.label">Ubicación</span>
+          <h3 data-translate="facts.items.location.title">Aliki, Paros</h3>
+          <p data-translate="facts.items.location.desc">A 2 km del aeropuerto de Paros y a 2 minutos a pie del pueblo de Aliki.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-kicker" data-translate="facts.items.beach.label">Playa</span>
+          <h3 data-translate="facts.items.beach.title">Acceso al mar cerca</h3>
+          <p data-translate="facts.items.beach.desc">Costa rocosa junto a la casa y playas de arena a 1-5 minutos.</p>
+        </article>
+        <article class="fact-card">
+          <span class="fact-kicker" data-translate="facts.items.bestFor.label">Ideal Para</span>
+          <h3 data-translate="facts.items.bestFor.title">Parejas, familias, viajes lentos</h3>
+          <p data-translate="facts.items.bestFor.desc">Una base tranquila para días de playa, tabernas locales y mañanas serenas en el sur de Paros.</p>
+        </article>
       </div>
     </div>
   </section>
