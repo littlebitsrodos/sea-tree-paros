@@ -7,7 +7,7 @@ Static vacation-rental site for The SeaTree, Aliki Beach, Paros.
 - Plain HTML, CSS, and vanilla ES modules. No build step.
 - PWA shell with `sw.js`, `manifest.json`, and `offline.html`.
 - Self-hosted fonts from `./fonts/` via `./fonts.css`.
-- Formspree for contact form. Stripe Payment Links for booking.
+- Direct contact for inquiries: WhatsApp, phone, email, plus Airbnb/Booking.com fallback links.
 - Strict CSP: no inline scripts; keep external domains intentionally allow-listed.
 
 ## Key Files

@@ -1917,15 +1917,29 @@ section:nth-child(even) {
   color: var(--color-sea-blue);
 }
 
-/* Book Now Button */
+/* Calendar Inquiry Actions */
 .selection-actions {
   display: flex;
   gap: var(--space-sm);
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.book-now-btn {
+.inquiry-action {
   padding: 0.75rem 1.5rem;
+  background: var(--color-white);
+  color: var(--color-sea-blue);
+  border: 1px solid rgba(42, 77, 92, 0.18);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.inquiry-action-primary {
   background: linear-gradient(135deg, var(--color-terracotta), var(--color-terracotta-light));
   color: var(--color-white);
   border: none;
@@ -1939,7 +1953,12 @@ section:nth-child(even) {
   box-shadow: 0 4px 15px rgba(184, 136, 107, 0.3);
 }
 
-.book-now-btn:hover {
+.inquiry-action:hover {
+  transform: translateY(-2px);
+  border-color: rgba(42, 77, 92, 0.32);
+}
+
+.inquiry-action-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(184, 136, 107, 0.4);
   background: linear-gradient(135deg, var(--color-terracotta-light), var(--color-terracotta));

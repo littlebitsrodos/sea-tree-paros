@@ -248,7 +248,17 @@ const translations = {
       airbnb: "Book on Airbnb",
       airbnbSub: "Instant confirmation",
       bookingcom: "Book on Booking.com",
-      bookingcomSub: "Free cancellation options"
+      bookingcomSub: "Free cancellation options",
+      selectionCheckIn: "Check-in",
+      selectionCheckOut: "Check-out",
+      selectCheckout: "Select check-out date",
+      clearSelection: "Clear",
+      nightSingular: "{nights} night",
+      nightPlural: "{nights} nights",
+      inquireWhatsapp: "Ask on WhatsApp",
+      inquireEmail: "Ask by email",
+      inquirySubject: "The SeaTree inquiry: {checkIn} to {checkOut}",
+      inquiryBody: "Hello Antonis,\n\nI am interested in staying at The SeaTree from {checkIn} to {checkOut} ({nights} nights). The calendar estimate shows {totalPrice}.\n\nCould you please confirm availability and the best way to book?\n\nThank you."
     },
 
     // Footer
@@ -516,7 +526,17 @@ const translations = {
       airbnb: "Reservar en Airbnb",
       airbnbSub: "Confirmación inmediata",
       bookingcom: "Reservar en Booking.com",
-      bookingcomSub: "Opciones de cancelación gratuita"
+      bookingcomSub: "Opciones de cancelación gratuita",
+      selectionCheckIn: "Llegada",
+      selectionCheckOut: "Salida",
+      selectCheckout: "Selecciona la fecha de salida",
+      clearSelection: "Borrar",
+      nightSingular: "{nights} noche",
+      nightPlural: "{nights} noches",
+      inquireWhatsapp: "Consultar por WhatsApp",
+      inquireEmail: "Consultar por email",
+      inquirySubject: "Consulta The SeaTree: {checkIn} a {checkOut}",
+      inquiryBody: "Hola Antonis,\n\nMe interesa alojarme en The SeaTree del {checkIn} al {checkOut} ({nights} noches). La estimación del calendario muestra {totalPrice}.\n\n¿Podrías confirmar la disponibilidad y la mejor forma de reservar?\n\nGracias."
     },
 
     // Footer
@@ -784,7 +804,17 @@ const translations = {
       airbnb: "Κράτηση στο Airbnb",
       airbnbSub: "Άμεση επιβεβαίωση",
       bookingcom: "Κράτηση στο Booking.com",
-      bookingcomSub: "Επιλογές δωρεάν ακύρωσης"
+      bookingcomSub: "Επιλογές δωρεάν ακύρωσης",
+      selectionCheckIn: "Άφιξη",
+      selectionCheckOut: "Αναχώρηση",
+      selectCheckout: "Επιλέξτε ημερομηνία αναχώρησης",
+      clearSelection: "Καθαρισμός",
+      nightSingular: "{nights} διανυκτέρευση",
+      nightPlural: "{nights} διανυκτερεύσεις",
+      inquireWhatsapp: "Ρωτήστε στο WhatsApp",
+      inquireEmail: "Ρωτήστε με email",
+      inquirySubject: "Ερώτημα για The SeaTree: {checkIn} έως {checkOut}",
+      inquiryBody: "Γεια σου Αντώνη,\n\nΜε ενδιαφέρει διαμονή στο The SeaTree από {checkIn} έως {checkOut} ({nights} διανυκτερεύσεις). Η εκτίμηση του ημερολογίου δείχνει {totalPrice}.\n\nΜπορείς να επιβεβαιώσεις διαθεσιμότητα και τον καλύτερο τρόπο κράτησης;\n\nΕυχαριστώ."
     },
 
     // Footer
@@ -1052,7 +1082,17 @@ const translations = {
       airbnb: "Réserver sur Airbnb",
       airbnbSub: "Confirmation immédiate",
       bookingcom: "Réserver sur Booking.com",
-      bookingcomSub: "Options d'annulation gratuite"
+      bookingcomSub: "Options d'annulation gratuite",
+      selectionCheckIn: "Arrivée",
+      selectionCheckOut: "Départ",
+      selectCheckout: "Sélectionnez la date de départ",
+      clearSelection: "Effacer",
+      nightSingular: "{nights} nuit",
+      nightPlural: "{nights} nuits",
+      inquireWhatsapp: "Demander sur WhatsApp",
+      inquireEmail: "Demander par email",
+      inquirySubject: "Demande The SeaTree : {checkIn} au {checkOut}",
+      inquiryBody: "Bonjour Antonis,\n\nJe souhaite séjourner à The SeaTree du {checkIn} au {checkOut} ({nights} nuits). L'estimation du calendrier indique {totalPrice}.\n\nPouvez-vous confirmer la disponibilité et la meilleure façon de réserver ?\n\nMerci."
     },
 
     // Footer
