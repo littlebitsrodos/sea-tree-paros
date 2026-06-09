@@ -7,7 +7,9 @@ same-origin JSON file — no CORS proxy, no runtime third-party dependency,
 no CSP gymnastics.
 
 If all feeds fail the existing bookings.json is preserved (better stale
-than empty). If at least one succeeds we union the results.
+than empty). In a clean deploy checkout, where no existing bookings.json is
+available, the script fails rather than publishing the site without
+availability data. If at least one succeeds we union the results.
 
 Pure stdlib on purpose: the GitHub workflow does not pip-install anything.
 """
@@ -107,6 +109,22 @@ def extract_blocked_dates(ical_text: str) -> set[str]:
     return blocked
 
 
+def handle_all_feeds_failed() -> int:
+    if OUT_PATH.exists():
+        print(
+            "all feeds failed; preserving existing bookings.json",
+            file=sys.stderr,
+        )
+        return 0
+
+    print(
+        "all feeds failed and bookings.json does not exist; "
+        "aborting deploy to keep the live calendar intact",
+        file=sys.stderr,
+    )
+    return 1
+
+
 def main() -> int:
     all_blocked: set[str] = set()
     source_status: dict[str, str] = {}
@@ -129,12 +147,9 @@ def main() -> int:
 
     if successes == 0:
         # All feeds down — keep any prior bookings.json rather than
-        # overwriting with an empty list. Deploy still proceeds.
-        print(
-            "all feeds failed; preserving existing bookings.json",
-            file=sys.stderr,
-        )
-        return 0
+        # overwriting with an empty list. In CI's clean checkout, fail the
+        # deploy instead of publishing an artifact that omits bookings.json.
+        return handle_all_feeds_failed()
 
     today = date.today().isoformat()
     future_blocked = sorted(d for d in all_blocked if d >= today)

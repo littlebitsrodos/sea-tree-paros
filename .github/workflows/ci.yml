@@ -52,6 +52,9 @@ jobs:
       - name: Rebuild per-locale HTMLs
         run: python3 scripts/build_locales.py
 
+      - name: Run booking sync unit tests
+        run: python3 scripts/test_sync_bookings.py
+
       - name: Install dependencies
         run: npm ci
 
