@@ -33,7 +33,9 @@ jobs:
     # Skip tests on scheduled runs — cron only refreshes booking data, code
     # is unchanged. Saves ~45s of runner time per hour.
     if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
+    # ubuntu-latest is Ubuntu 26.04. Playwright 1.59 has no chromium build
+    # for it (CI run 1035). Pin 24.04 so the test job can install chromium.
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
