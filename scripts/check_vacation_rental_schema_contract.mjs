@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,7 +27,27 @@ function assertOccupancyShape(node, label) {
   assert.equal(typeof node.occupancy.value, 'number', `${label} occupancy.value must be a number`);
 }
 
+function assertJsonLdCspHashes() {
+  const indexHtml = readProjectFile('index.html');
+  const policy = indexHtml.match(/http-equiv="Content-Security-Policy"[\s\S]*?content="([^"]*)"/)?.[1];
+  assert.ok(policy, 'index.html must include a Content-Security-Policy meta tag');
+
+  const scriptSrc = policy.split(';').map((part) => part.trim()).find((part) => part.startsWith('script-src'));
+  assert.ok(scriptSrc, 'CSP must include script-src');
+  assert.equal(scriptSrc.includes("'unsafe-inline'"), false, 'script-src must not allow unsafe-inline');
+
+  // validator.w3.org/nu hashes inline script text after trimming the ends.
+  // Browsers do not run application/ld+json, so these hashes are for the checker.
+  const blocks = [...indexHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  assert.ok(blocks.length >= 2, 'index.html must include the JSON-LD data blocks');
+  for (const block of blocks) {
+    const hash = createHash('sha256').update(block[1].trim()).digest('base64');
+    assert.ok(scriptSrc.includes(`'sha256-${hash}'`), `script-src is missing sha256-${hash} for a JSON-LD block`);
+  }
+}
+
 export function assertVacationRentalSchemaContract() {
+  assertJsonLdCspHashes();
   const schema = extractVacationRentalSchema();
 
   assert.equal(typeof schema.identifier, 'string', 'VacationRental identifier must be a string');
