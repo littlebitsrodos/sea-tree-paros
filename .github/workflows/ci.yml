@@ -58,6 +58,19 @@ jobs:
       - name: Run live booking parity unit tests
         run: python3 scripts/test_live_bookings_parity.py
 
+      - name: Run booking freshness unit tests
+        run: python3 scripts/test_bookings_freshness.py
+
+      - name: Fail if the live calendar is older than 2 days
+        if: github.event_name == 'pull_request'
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          echo "workflow_run_id=${WORKFLOW_RUN_ID}"
+          echo "workflow_run_url=${WORKFLOW_RUN_URL}"
+          python3 scripts/check_bookings_freshness.py --url https://seatree.gr/bookings.json --max-age-days 2
+
       - name: Run price parity contract
         run: node scripts/check_price_parity_contract.mjs
 
@@ -131,6 +144,15 @@ jobs:
 
       - name: Sync availability from Airbnb + Booking.com iCal feeds
         run: python3 scripts/sync_bookings.py
+
+      - name: Reject a stale availability snapshot
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          echo "workflow_run_id=${WORKFLOW_RUN_ID}"
+          echo "workflow_run_url=${WORKFLOW_RUN_URL}"
+          python3 scripts/check_bookings_freshness.py --file bookings.json --max-age-days 2
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
