@@ -1,0 +1,39 @@
+name: Keep repository active
+
+# Public repositories disable scheduled workflows after 60 days without a
+# commit. Scheduled runs do not count. That is why the hourly calendar
+# refresh in ci.yml stopped on 2026-08-08. This job adds one empty commit
+# when main has been quiet for 21 days. It does not deploy the site and it
+# does not send messages.
+#
+# A push made with the workflow token does not start the CI workflow, so
+# this commit does not publish a second copy of the site.
+
+on:
+  schedule:
+    # Weekly, Sunday 03:17 UTC, off the hour. Weekly still leaves several
+    # chances to stamp before the 60-day cutoff if one run is skipped.
+    - cron: "17 3 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-activity
+  cancel-in-progress: false
+
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Stamp activity when main has been quiet
+        run: python3 scripts/keep_repo_active.py

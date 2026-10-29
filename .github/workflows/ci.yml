@@ -15,6 +15,8 @@ on:
   schedule:
     # Refresh availability from Airbnb + Booking.com every hour.
     # Cron runs in UTC; :15 to dodge the top-of-hour runner burst.
+    # A public repo disables this schedule after 60 days without a commit.
+    # .github/workflows/keepalive.yml adds that commit when main is quiet.
     - cron: "15 * * * *"
 
 permissions:
@@ -60,6 +62,9 @@ jobs:
 
       - name: Run booking freshness unit tests
         run: python3 scripts/test_bookings_freshness.py
+
+      - name: Run keep-alive contract tests
+        run: python3 scripts/test_keep_repo_active.py
 
       - name: Fail if the live calendar is older than 2 days
         if: github.event_name == 'pull_request'

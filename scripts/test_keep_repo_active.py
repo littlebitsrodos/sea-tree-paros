@@ -2,10 +2,14 @@
 """The hourly calendar schedule dies after 60 quiet days unless a commit lands."""
 from __future__ import annotations
 
+import os
 import re
 import unittest
+from contextlib import redirect_stderr, redirect_stdout
 from datetime import datetime, timedelta, timezone
+from io import StringIO
 from pathlib import Path
+from unittest.mock import patch
 
 import keep_repo_active as activity
 
@@ -41,6 +45,28 @@ class KeepRepoActiveTests(unittest.TestCase):
         now = committed_at + timedelta(days=21, hours=3)
 
         self.assertEqual(activity.commit_age_days(committed_at, now), 21)
+
+    def test_a_due_stamp_is_refused_outside_actions(self) -> None:
+        old = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        with patch.object(activity, "last_commit_time", return_value=old), patch.object(
+            activity, "commit_empty"
+        ) as commit, patch.dict(os.environ, {"GITHUB_ACTIONS": ""}), redirect_stdout(
+            StringIO()
+        ), redirect_stderr(StringIO()):
+            code = activity.main([])
+
+        self.assertEqual(code, 2)
+        commit.assert_not_called()
+
+    def test_dry_run_does_not_commit(self) -> None:
+        old = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        with patch.object(activity, "last_commit_time", return_value=old), patch.object(
+            activity, "commit_empty"
+        ) as commit, redirect_stdout(StringIO()), redirect_stderr(StringIO()):
+            code = activity.main(["--dry-run"])
+
+        self.assertEqual(code, 0)
+        commit.assert_not_called()
 
     def test_workflow_is_a_contents_write_stamp_and_nothing_else(self) -> None:
         text = WORKFLOW.read_text(encoding="utf-8")
