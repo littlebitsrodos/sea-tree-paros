@@ -7,9 +7,12 @@
 
   <!-- CSP via meta. X-Content-Type-Options and Permissions-Policy are not valid
        http-equiv values, so browsers ignore them. GitHub Pages cannot send
-       those response headers. -->
+       those response headers.
+       The script-src hashes are the JSON-LD data blocks (trimmed). Browsers
+       do not execute type=application/ld+json. The hashes clear the W3C
+       checker finding without allowing 'unsafe-inline'. -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com">
+    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-IvWmBNWDtNrWsBiLrjRKl6ilVkzTez5fO2+RZbwjclQ=' 'sha256-UrVyk1p+lpWWPNhji2aZd/V+oy05qxQ35XAKrGTqk6M='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description"
     content="The SeaTree — une location de vacances unique à la plage d'Aliki, Paros, Grèce. Le légendaire disco-bar Romantica, transformé en refuge insulaire serein.">
