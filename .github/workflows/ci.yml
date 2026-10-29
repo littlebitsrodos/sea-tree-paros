@@ -66,16 +66,6 @@ jobs:
       - name: Run keep-alive contract tests
         run: python3 scripts/test_keep_repo_active.py
 
-      - name: Fail if the live calendar is older than 2 days
-        if: github.event_name == 'pull_request'
-        env:
-          WORKFLOW_RUN_ID: ${{ github.run_id }}
-          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: |
-          echo "workflow_run_id=${WORKFLOW_RUN_ID}"
-          echo "workflow_run_url=${WORKFLOW_RUN_URL}"
-          python3 scripts/check_bookings_freshness.py --url https://seatree.gr/bookings.json --max-age-days 2
-
       - name: Run price parity contract
         run: node scripts/check_price_parity_contract.mjs
 
@@ -150,6 +140,9 @@ jobs:
       - name: Sync availability from Airbnb + Booking.com iCal feeds
         run: python3 scripts/sync_bookings.py
 
+      # Records the run id and generated_at. Refuses a preserved snapshot
+      # older than 2 days. A sync that just succeeded is newer than that,
+      # so this does not block the refresh of a stale live site.
       - name: Reject a stale availability snapshot
         env:
           WORKFLOW_RUN_ID: ${{ github.run_id }}
@@ -178,3 +171,24 @@ jobs:
           --url https://seatree.gr/bookings.json
           --timeout 600
           --interval 15
+
+  # Separate from test and deploy so a stale live calendar cannot hide
+  # Playwright failures and cannot block the job that refreshes the data.
+  live-calendar:
+    name: Live calendar freshness
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Fail if the live calendar is older than 2 days
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          echo "workflow_run_id=${WORKFLOW_RUN_ID}"
+          echo "workflow_run_url=${WORKFLOW_RUN_URL}"
+          python3 scripts/check_bookings_freshness.py --url https://seatree.gr/bookings.json --max-age-days 2

@@ -84,6 +84,10 @@ class BookingFreshnessTests(unittest.TestCase):
             workflow,
         )
         self.assertIn("--max-age-days 2", workflow)
+        self.assertIn("name: Live calendar freshness", workflow)
+        deploy = workflow.split("\n  deploy:", 1)[1].split("\n  live-calendar:", 1)[0]
+        self.assertNotIn("check_bookings_freshness.py --url", deploy)
+        self.assertIn("needs: [test]", deploy)
 
 
 if __name__ == "__main__":
