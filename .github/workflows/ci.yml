@@ -15,6 +15,8 @@ on:
   schedule:
     # Refresh availability from Airbnb + Booking.com every hour.
     # Cron runs in UTC; :15 to dodge the top-of-hour runner burst.
+    # A public repo disables this schedule after 60 days without a commit.
+    # .github/workflows/keepalive.yml adds that commit when main is quiet.
     - cron: "15 * * * *"
 
 permissions:
@@ -31,7 +33,9 @@ jobs:
     # Skip tests on scheduled runs — cron only refreshes booking data, code
     # is unchanged. Saves ~45s of runner time per hour.
     if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
+    # ubuntu-latest is Ubuntu 26.04. Playwright 1.59 has no chromium build
+    # for it (CI run 1035). Pin 24.04 so the test job can install chromium.
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -57,6 +61,12 @@ jobs:
 
       - name: Run live booking parity unit tests
         run: python3 scripts/test_live_bookings_parity.py
+
+      - name: Run booking freshness unit tests
+        run: python3 scripts/test_bookings_freshness.py
+
+      - name: Run keep-alive contract tests
+        run: python3 scripts/test_keep_repo_active.py
 
       - name: Run price parity contract
         run: node scripts/check_price_parity_contract.mjs
@@ -132,6 +142,18 @@ jobs:
       - name: Sync availability from Airbnb + Booking.com iCal feeds
         run: python3 scripts/sync_bookings.py
 
+      # Records the run id and generated_at. Refuses a preserved snapshot
+      # older than 2 days. A sync that just succeeded is newer than that,
+      # so this does not block the refresh of a stale live site.
+      - name: Reject a stale availability snapshot
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          echo "workflow_run_id=${WORKFLOW_RUN_ID}"
+          echo "workflow_run_url=${WORKFLOW_RUN_URL}"
+          python3 scripts/check_bookings_freshness.py --file bookings.json --max-age-days 2
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -151,3 +173,24 @@ jobs:
           --url https://seatree.gr/bookings.json
           --timeout 600
           --interval 15
+
+  # Separate from test and deploy so a stale live calendar cannot hide
+  # Playwright failures and cannot block the job that refreshes the data.
+  live-calendar:
+    name: Live calendar freshness
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Fail if the live calendar is older than 2 days
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          echo "workflow_run_id=${WORKFLOW_RUN_ID}"
+          echo "workflow_run_url=${WORKFLOW_RUN_URL}"
+          python3 scripts/check_bookings_freshness.py --url https://seatree.gr/bookings.json --max-age-days 2
