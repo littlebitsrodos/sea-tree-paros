@@ -7,6 +7,16 @@ URL exists. Do not invent one.
 Earlier approvals for this pull request stay in `CHANGELOG.md` and are
 listed again here so this file does not replace them.
 
+## 2026-11-07 19:08 — Review a parity false-alarm fix, no merge
+
+- Sender: Yorgos
+- Time: 7/11/2026 19:08 Europe/Athens
+- Channel: direct SeaTree Lead chat
+- Proof link: unavailable
+- Context: the live availability check in run https://github.com/littlebitsrodos/sea-tree-paros/actions/runs/42393328900
+- Verbatim: «Ναι»
+- Meaning: implement, for review only, the minimal correction that stops a timestamp-only false alarm when the public availability dates and source status match. Do not weaken detection of stale or different data. This is not approval to merge or publish.
+
 ## 2026-11-07 18:41 — Merge PR 11, then clean up its branch
 
 - Sender: Yorgos
