@@ -14,12 +14,18 @@ import json
 import sys
 import time
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 
 DEFAULT_URL = "https://seatree.gr/bookings.json"
+# Identical facts can be one snapshot behind when two syncs of the same commit
+# run back to back. Run 42393328900 was 25s older and otherwise equal. The
+# 2-day freshness check is a different contract: a matching calendar from
+# hours earlier is still a failed publication. One minute covers that gap and
+# stays inside the parity fixture that already rejects a 5-minute-older payload.
+MAX_SAME_CONTENT_TIMESTAMP_SKEW = timedelta(seconds=60)
 
 
 def parse_timestamp(value: str) -> datetime:
@@ -78,7 +84,11 @@ def parity_errors(expected: dict[str, Any], live: dict[str, Any]) -> list[str]:
     except (KeyError, ValueError) as exc:
         errors.append(f"generated_at timestamp is invalid or missing: {exc}")
     else:
-        if live_generated < expected_generated:
+        skew = expected_generated - live_generated
+        same_facts = not errors
+        if skew > timedelta(0) and not (
+            same_facts and skew <= MAX_SAME_CONTENT_TIMESTAMP_SKEW
+        ):
             errors.append(
                 "live bookings.json is stale: "
                 f"expected generated_at >= {expected['generated_at']}, "

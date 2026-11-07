@@ -20,7 +20,6 @@ Run it before commit/deploy:
 Re-runs are idempotent — it always regenerates the locale files
 fresh from the current index.html + translations.js.
 """
-import datetime
 import json
 import re
 import shutil
@@ -218,6 +217,24 @@ def absolutize_paths(html):
     return html
 
 
+# Home pages are regenerated from these inputs. Privacy pages are standalone
+# HTML and are not rebuilt here, so each privacy URL is dated from its own file.
+HOME_SITEMAP_SOURCES = {
+    "https://seatree.gr/": ("index.html", "translations.js"),
+    "https://seatree.gr/es/": ("index.html", "translations.js"),
+    "https://seatree.gr/el/": ("index.html", "translations.js"),
+    "https://seatree.gr/fr/": ("index.html", "translations.js"),
+}
+PRIVACY_SITEMAP_SOURCES = {
+    "https://seatree.gr/privacy/": ("privacy/index.html",),
+    "https://seatree.gr/es/privacy/": ("es/privacy/index.html",),
+    "https://seatree.gr/el/privacy/": ("el/privacy/index.html",),
+    "https://seatree.gr/fr/privacy/": ("fr/privacy/index.html",),
+}
+_URL_BLOCK = re.compile(r"<url>\s*.*?</url>", re.DOTALL)
+_LASTMOD = re.compile(r"<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>")
+
+
 def _git_date(*args):
     try:
         return subprocess.check_output(
@@ -230,22 +247,48 @@ def _git_date(*args):
         return ""
 
 
+def sources_for_sitemap_loc(loc):
+    return HOME_SITEMAP_SOURCES.get(loc) or PRIVACY_SITEMAP_SOURCES.get(loc)
+
+
+def apply_sitemap_lastmods(sitemap, git_date):
+    """Set each URL lastmod from that URL's source files.
+
+    git_date(*paths) returns YYYY-MM-DD for the newest commit among those
+    paths, or "" when that history is unavailable. An empty result keeps the
+    date already in the sitemap instead of inventing one.
+    """
+
+    def replace_url(match):
+        block = match.group(0)
+        loc_match = re.search(r"<loc>([^<]+)</loc>", block)
+        lastmod_match = _LASTMOD.search(block)
+        if not loc_match or not lastmod_match:
+            return block
+        sources = sources_for_sitemap_loc(loc_match.group(1).strip())
+        if not sources:
+            return block
+        dated = git_date(*sources)
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", dated or ""):
+            return block
+        return block[: lastmod_match.start(1)] + dated + block[lastmod_match.end(1) :]
+
+    return _URL_BLOCK.sub(replace_url, sitemap)
+
+
+def _git_date_for_paths(*paths):
+    return _git_date("--", *paths)
+
+
 def update_sitemap_lastmod():
-    last_change = (
-        _git_date("--", "index.html", "translations.js")
-        or _git_date("HEAD")
-        or datetime.date.today().isoformat()
-    )
     sitemap_path = ROOT / "sitemap.xml"
     sitemap = sitemap_path.read_text()
-    new_sitemap = re.sub(
-        r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>",
-        f"<lastmod>{last_change}</lastmod>",
-        sitemap,
-    )
+    new_sitemap = apply_sitemap_lastmods(sitemap, _git_date_for_paths)
     if new_sitemap != sitemap:
         sitemap_path.write_text(new_sitemap)
-    print(f"updated sitemap.xml lastmod → {last_change}")
+        print("updated sitemap.xml lastmod from each URL's source files")
+    else:
+        print("sitemap.xml lastmod already matches each URL's source files")
 
 
 def build_locale(src_html, locale, all_translations):
