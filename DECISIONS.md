@@ -7,6 +7,18 @@ URL exists. Do not invent one.
 Earlier approvals for this pull request stay in `CHANGELOG.md` and are
 listed again here so this file does not replace them.
 
+## 2026-11-07 20:58 — Merge PR 12, then clean up its branch
+
+- Sender: Yorgos
+- Time: 7/11/2026 20:58 Europe/Athens
+- Channel: direct SeaTree Lead chat
+- Proof link: unavailable
+- Context: only https://github.com/littlebitsrodos/sea-tree-paros/pull/12
+- Verbatim: «Merge»
+- Meaning: merge that pull request by the repository's normal merge. No other pull request, including PR 10, is included. The 19:08 entry remains the review-only approval and is not rewritten.
+- Follow-up, 7/11/2026 20:59 Europe/Athens, same channel, proof link unavailable. Verbatim: «And cleanup then». Meaning: after a successful merge and live verification, delete only `cursor/availability-parity-skew-b9cf` if it is fully merged. Do not delete other branches.
+- Rollback, not authorized by this entry: if a later decision says so, revert the merge commit in a new pull request. Do not rewrite history. This change does not alter cached website assets.
+
 ## 2026-11-07 19:08 — Review a parity false-alarm fix, no merge
 
 - Sender: Yorgos
