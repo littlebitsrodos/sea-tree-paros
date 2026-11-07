@@ -7,6 +7,13 @@ Future changes must add an entry here.
 
 ## 2026-11-07
 
+- What: Sitemap `<lastmod>` now follows each URL's own source files. The four home URLs use `index.html` and `translations.js`. Each Privacy URL uses only its own HTML file.
+- Why / Γιατί: `build_locales.py` previously stamped every URL, including unchanged Privacy pages, with the home-page commit date. The next preflight or deploy would undo the Privacy date restoration.
+- Approval / Έγκριση: Yorgos, 7/11/2026 18:35 Europe/Athens. Link unavailable. Verbatim: «Παμε μονομη λυση», for a permanent fix so generation does not rewrite unchanged Privacy lastmod dates.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
+
+## 2026-11-07
+
 - What: Restored `<lastmod>2026-06-09</lastmod>` on the four Privacy sitemap URLs (`/privacy/`, `/es/privacy/`, `/el/privacy/`, `/fr/privacy/`). The four language home URLs stay at `2026-11-07`.
 - Why / Γιατί: Privacy content did not change. `build_locales.py` had rewritten every sitemap `<lastmod>` from the `index.html` commit date, including those four URLs.
 - Approval / Έγκριση: Yorgos, 7/11/2026 18:32 Europe/Athens. Link unavailable. Verbatim: «Ναι», for this correction only: restore the four Privacy sitemap lastmod dates.
