@@ -68,6 +68,9 @@ jobs:
       - name: Run keep-alive contract tests
         run: python3 scripts/test_keep_repo_active.py
 
+      - name: Run sitemap lastmod contract
+        run: python3 scripts/test_sitemap_lastmod.py
+
       - name: Run price parity contract
         run: node scripts/check_price_parity_contract.mjs
 
@@ -122,8 +125,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Full history so build_locales.py can read the last commit date
-          # touching index.html / translations.js for sitemap <lastmod>.
+          # Full history so build_locales.py can date each sitemap URL from
+          # the commits that last changed that URL's own source files.
           fetch-depth: 0
 
       - name: Setup Node (for build_locales.py → translations.js bridge)

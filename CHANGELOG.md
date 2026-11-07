@@ -5,6 +5,34 @@ request or workflow run.
 
 Future changes must add an entry here.
 
+## 2026-11-07
+
+- What: Recorded the decision to merge pull request 11 and then remove only its branch, in `DECISIONS.md`. Earlier approvals in this file stay as they were.
+- Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved. If a later decision authorizes rollback, it is a revert of the merge commit in a new pull request, with a new cache version rather than reuse of `sea-tree-v46` or `sea-tree-v47`.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 18:41 Europe/Athens. Link unavailable. Verbatim: «Merge» and «Then cleanup». Context: PR 11 only.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
+
+## 2026-11-07
+
+- What: Sitemap `<lastmod>` now follows each URL's own source files. The four home URLs use `index.html` and `translations.js`. Each Privacy URL uses only its own HTML file.
+- Why / Γιατί: `build_locales.py` previously stamped every URL, including unchanged Privacy pages, with the home-page commit date. The next preflight or deploy would undo the Privacy date restoration.
+- Approval / Έγκριση: Yorgos, 7/11/2026 18:35 Europe/Athens. Link unavailable. Verbatim: «Παμε μονομη λυση», for a permanent fix so generation does not rewrite unchanged Privacy lastmod dates.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
+
+## 2026-11-07
+
+- What: Restored `<lastmod>2026-06-09</lastmod>` on the four Privacy sitemap URLs (`/privacy/`, `/es/privacy/`, `/el/privacy/`, `/fr/privacy/`). The four language home URLs stay at `2026-11-07`.
+- Why / Γιατί: Privacy content did not change. `build_locales.py` had rewritten every sitemap `<lastmod>` from the `index.html` commit date, including those four URLs.
+- Approval / Έγκριση: Yorgos, 7/11/2026 18:32 Europe/Athens. Link unavailable. Verbatim: «Ναι», for this correction only: restore the four Privacy sitemap lastmod dates.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
+
+## 2026-11-07
+
+- What: Removed `numberOfBedrooms`, `numberOfBathroomsTotal`, and `occupancy` from the top-level `VacationRental` JSON-LD on `/`, `/es/`, `/el/`, and `/fr/`. The same bedroom, bathroom, and occupancy facts stay on each `containsPlace` `Accommodation`. Service worker cache is `sea-tree-v47`.
+- Why / Γιατί: On 7/11/2026, validator.schema.org reported exactly those three properties as unrecognized on `VacationRental`. Schema.org defines them on `Accommodation`, not on `VacationRental`. `tourBookingPage` and `additionalType` were not warnings and were left unchanged.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 17:57 Europe/Athens. Link unavailable. Verbatim: «Εγκρίνω την εργασία στον Cursor μόνο για τα τρία πεδία, χωρίς merge ή δημοσίευση.» This is not approval to publish.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
+
 ## 2026-10-29
 
 - What: Pinned the CI `test` job to `ubuntu-24.04` in `.github/workflows/ci.yml`.
