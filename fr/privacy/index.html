@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSP via meta. X-Content-Type-Options and Permissions-Policy are not valid
+       http-equiv values, so browsers ignore them. GitHub Pages cannot send
+       those response headers. -->
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <meta name="description" content="Politique de confidentialité et cookies de seatree.gr — quelles données nous collectons, pourquoi, et vos droits selon le RGPD.">
   <meta name="robots" content="index, follow">
   <title>Politique de Confidentialité et Cookies | The SeaTree</title>

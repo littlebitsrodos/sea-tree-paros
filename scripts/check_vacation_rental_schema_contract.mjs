@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -61,6 +62,48 @@ function accommodationFacts(place) {
   };
 }
 
+function scriptSrcDirective(html, label) {
+  const policy = html.match(/http-equiv="Content-Security-Policy"[\s\S]*?content="([^"]*)"/)?.[1];
+  assert.ok(policy, `${label} must include a Content-Security-Policy meta tag`);
+  const scriptSrc = policy.split(';').map((part) => part.trim()).find((part) => part.startsWith('script-src'));
+  assert.ok(scriptSrc, `${label} CSP must include script-src`);
+  assert.equal(scriptSrc.includes("'unsafe-inline'"), false, `${label} script-src must not allow unsafe-inline`);
+  return scriptSrc;
+}
+
+export function jsonLdCspHashes(html) {
+  return [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((block) => (
+    createHash('sha256').update(block[1].trim()).digest('base64')
+  ));
+}
+
+export function assertJsonLdCspHashesForHtml(html, label) {
+  const scriptSrc = scriptSrcDirective(html, label);
+  const hashes = jsonLdCspHashes(html);
+  assert.ok(hashes.length >= 2, `${label} must include the JSON-LD data blocks`);
+  for (const hash of hashes) {
+    assert.ok(scriptSrc.includes(`'sha256-${hash}'`), `${label} script-src is missing sha256-${hash} for a JSON-LD block`);
+  }
+}
+
+function assertJsonLdCspHashes() {
+  for (const page of LOCALE_PAGES) {
+    assertJsonLdCspHashesForHtml(readProjectFile(page), page);
+  }
+
+  // The hash below matched VacationRental JSON-LD before the three top-level
+  // fields were removed. It must not satisfy the current pages.
+  const staleHash = 'sha256-IvWmBNWDtNrWsBiLrjRKl6ilVkzTez5fO2+RZbwjclQ=';
+  const currentHtml = readProjectFile('index.html');
+  const [currentHash] = jsonLdCspHashes(currentHtml);
+  assert.notEqual(`sha256-${currentHash}`, staleHash, 'the current VacationRental hash must replace the stale one');
+  const staleHtml = currentHtml.replace(`sha256-${currentHash}`, staleHash);
+  assert.throws(
+    () => assertJsonLdCspHashesForHtml(staleHtml, 'stale JSON-LD hash'),
+    /missing sha256-/
+  );
+}
+
 function assertPageContract(schema, page) {
   assert.equal(typeof schema.identifier, 'string', `${page}: VacationRental identifier must be a string`);
   assert.match(schema.identifier, /\S/, `${page}: VacationRental identifier must not be empty`);
@@ -119,6 +162,8 @@ function assertPageContract(schema, page) {
 }
 
 export function assertVacationRentalSchemaContract() {
+  assertJsonLdCspHashes();
+
   const violations = [];
   const schemas = LOCALE_PAGES.map((page) => {
     const schema = extractVacationRentalSchema(page);

@@ -7,6 +7,20 @@ Future changes must add an entry here.
 
 ## 2026-11-07
 
+- What: Recorded the decision to merge the adapted pull request 10 and then remove only its branch, in `DECISIONS.md`. The 22:54 review-only entry stays as it was.
+- Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 23:00 Europe/Athens. Link unavailable. Verbatim: «Merge and then cleanup». Context: adapted PR 10 only.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/10
+
+## 2026-11-07
+
+- What: Adapted the W3C HTML validator fix onto current main. Invalid `http-equiv` metas stay removed, the lightbox keeps a non-empty placeholder, and `script-src` now hashes the JSON-LD blocks as they are after the VacationRental field move. Service worker cache is `sea-tree-v48`. No `'unsafe-inline'`.
+- Why / Γιατί: The earlier hash matched the JSON-LD from before `numberOfBedrooms`, `numberOfBathroomsTotal`, and `occupancy` left the top-level `VacationRental`. The WebSite hash was already current.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 22:54 Europe/Athens. Link unavailable. Verbatim: «Go». This approves the adaptation for review. It is not approval to merge or publish.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/10
+
+## 2026-11-07
+
 - What: Recorded the decision to merge pull request 12 and then remove only its branch, in `DECISIONS.md`. The 19:08 review-only entry stays as it was.
 - Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved.
 - Approval / Έγκριση: Yorgos, direct SeaTree Lead chat. Link unavailable. 7/11/2026 20:58 Europe/Athens, verbatim: «Merge». 7/11/2026 20:59 Europe/Athens, verbatim: «And cleanup then». Context: PR 12 only.
@@ -64,3 +78,9 @@ Future changes must add an entry here.
 - What: GitHub set the CI workflow (`.github/workflows/ci.yml`) to `disabled_inactivity`. The hourly Airbnb and Booking.com calendar refresh stopped.
 - Why / Γιατί: On a public repository, GitHub disables scheduled workflows after 60 days without a commit. The last commit was `f874204` on 2026-06-09. Scheduled runs do not count as activity, so the hourly job did not keep the repository active. Sixty days later, on 2026-08-08, GitHub disabled the schedule. The last successful run was [31259041380](https://github.com/littlebitsrodos/sea-tree-paros/actions/runs/31259041380) at 2026-08-08 13:13 UTC (16:13 Athens). Live `bookings.json` stayed at `generated_at` `2026-08-08T13:13:38+00:00`.
 - Link: https://github.com/littlebitsrodos/sea-tree-paros/actions/runs/31259041380
+
+## 2026-10-29
+
+- What: W3C HTML validator fix: drop the invalid `X-Content-Type-Options` and `Permissions-Policy` http-equiv metas, give the lightbox image a non-empty 1×1 placeholder that `script.js` replaces when a photo opens, and add sha256 hashes of the trimmed JSON-LD blocks to `script-src`. No `'unsafe-inline'`.
+- Why / Γιατί: validator.w3.org reported 3 errors and 2 infos on each homepage and 2 errors on each privacy page. The 2026-11-07 entry above recalculates the VacationRental hash after the schema change.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/10
