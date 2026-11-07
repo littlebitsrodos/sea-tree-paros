@@ -7,6 +7,13 @@ Future changes must add an entry here.
 
 ## 2026-11-07
 
+- What: Recorded the decision to merge pull request 11 and then remove only its branch, in `DECISIONS.md`. Earlier approvals in this file stay as they were.
+- Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved. If a later decision authorizes rollback, it is a revert of the merge commit in a new pull request, with a new cache version rather than reuse of `sea-tree-v46` or `sea-tree-v47`.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 18:41 Europe/Athens. Link unavailable. Verbatim: «Merge» and «Then cleanup». Context: PR 11 only.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
+
+## 2026-11-07
+
 - What: Sitemap `<lastmod>` now follows each URL's own source files. The four home URLs use `index.html` and `translations.js`. Each Privacy URL uses only its own HTML file.
 - Why / Γιατί: `build_locales.py` previously stamped every URL, including unchanged Privacy pages, with the home-page commit date. The next preflight or deploy would undo the Privacy date restoration.
 - Approval / Έγκριση: Yorgos, 7/11/2026 18:35 Europe/Athens. Link unavailable. Verbatim: «Παμε μονομη λυση», for a permanent fix so generation does not rewrite unchanged Privacy lastmod dates.
