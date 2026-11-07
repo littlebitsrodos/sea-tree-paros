@@ -10,7 +10,7 @@ Future changes must add an entry here.
 - What: Removed `numberOfBedrooms`, `numberOfBathroomsTotal`, and `occupancy` from the top-level `VacationRental` JSON-LD on `/`, `/es/`, `/el/`, and `/fr/`. The same bedroom, bathroom, and occupancy facts stay on each `containsPlace` `Accommodation`. Service worker cache is `sea-tree-v47`.
 - Why / Γιατί: On 7/11/2026, validator.schema.org reported exactly those three properties as unrecognized on `VacationRental`. Schema.org defines them on `Accommodation`, not on `VacationRental`. `tourBookingPage` and `additionalType` were not warnings and were left unchanged.
 - Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 17:57 Europe/Athens. Link unavailable. Verbatim: «Εγκρίνω την εργασία στον Cursor μόνο για τα τρία πεδία, χωρίς merge ή δημοσίευση.» This is not approval to publish.
-- Link: pending pull request
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/11
 
 ## 2026-10-29
 
