@@ -10,7 +10,7 @@ Future changes must add an entry here.
 - What: The live availability parity check accepts an identical snapshot up to 60 seconds older. Different dates, degraded source status, a bad timestamp, or a larger gap still fail.
 - Why / Γιατί: Run 42393328900 synced successfully and matched the public dates and source status, but `generated_at` was 25 seconds older after two deploys of one commit. The 2-day freshness rule is unchanged and is not the tolerance. One minute stays below the existing fixture that already rejects a 5-minute-older identical payload.
 - Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 19:08 Europe/Athens. Link unavailable. Verbatim: «Ναι». Review only. This is not approval to merge or publish.
-- Link: pending pull request
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/12
 
 ## 2026-11-07
 
