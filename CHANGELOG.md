@@ -7,6 +7,13 @@ Future changes must add an entry here.
 
 ## 2026-11-07
 
+- What: Recorded the decision to merge the adapted pull request 10 and then remove only its branch, in `DECISIONS.md`. The 22:54 review-only entry stays as it was.
+- Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 23:00 Europe/Athens. Link unavailable. Verbatim: «Merge and then cleanup». Context: adapted PR 10 only.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/10
+
+## 2026-11-07
+
 - What: Adapted the W3C HTML validator fix onto current main. Invalid `http-equiv` metas stay removed, the lightbox keeps a non-empty placeholder, and `script-src` now hashes the JSON-LD blocks as they are after the VacationRental field move. Service worker cache is `sea-tree-v48`. No `'unsafe-inline'`.
 - Why / Γιατί: The earlier hash matched the JSON-LD from before `numberOfBedrooms`, `numberOfBathroomsTotal`, and `occupancy` left the top-level `VacationRental`. The WebSite hash was already current.
 - Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 22:54 Europe/Athens. Link unavailable. Verbatim: «Go». This approves the adaptation for review. It is not approval to merge or publish.

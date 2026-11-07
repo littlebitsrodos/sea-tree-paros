@@ -7,6 +7,17 @@ URL exists. Do not invent one.
 Earlier approvals for this pull request stay in `CHANGELOG.md` and are
 listed again here so this file does not replace them.
 
+## 2026-11-07 23:00 — Merge adapted PR 10, then clean up its branch
+
+- Sender: Yorgos
+- Time: 7/11/2026 23:00 Europe/Athens
+- Channel: direct SeaTree Lead chat
+- Proof link: unavailable
+- Context: only the adapted https://github.com/littlebitsrodos/sea-tree-paros/pull/10, after final checks. The 22:54 «Go» entry stays the review-only approval and is not rewritten.
+- Verbatim: «Merge and then cleanup»
+- Meaning: merge that pull request by the repository's normal merge, let the normal Pages pipeline publish, verify, then delete only `cursor/w3c-html-validator-a150` if it is fully merged. No other pull request is included.
+- Rollback, not authorized by this entry: if a later decision says so, revert the merge commit in a new pull request. Do not rewrite history. A rollback that changes a cached asset must set a new `CACHE_NAME`. Do not reuse `sea-tree-v47` or `sea-tree-v48`.
+
 ## 2026-11-07 22:54 — Adapt PR 10 for review, no merge
 
 - Sender: Yorgos
