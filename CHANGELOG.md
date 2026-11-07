@@ -7,6 +7,20 @@ Future changes must add an entry here.
 
 ## 2026-11-07
 
+- What: Recorded the decision to merge pull request 12 and then remove only its branch, in `DECISIONS.md`. The 19:08 review-only entry stays as it was.
+- Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat. Link unavailable. 7/11/2026 20:58 Europe/Athens, verbatim: «Merge». 7/11/2026 20:59 Europe/Athens, verbatim: «And cleanup then». Context: PR 12 only.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/12
+
+## 2026-11-07
+
+- What: The live availability parity check accepts an identical snapshot up to 60 seconds older. Different dates, degraded source status, a bad timestamp, or a larger gap still fail.
+- Why / Γιατί: Run 42393328900 synced successfully and matched the public dates and source status, but `generated_at` was 25 seconds older after two deploys of one commit. The 2-day freshness rule is unchanged and is not the tolerance. One minute stays below the existing fixture that already rejects a 5-minute-older identical payload.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 19:08 Europe/Athens. Link unavailable. Verbatim: «Ναι». Review only. This is not approval to merge or publish.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/12
+
+## 2026-11-07
+
 - What: Recorded the decision to merge pull request 11 and then remove only its branch, in `DECISIONS.md`. Earlier approvals in this file stay as they were.
 - Why / Γιατί: Yorgos approved that merge and the following branch cleanup, and only for this pull request. Rollback was not approved. If a later decision authorizes rollback, it is a revert of the merge commit in a new pull request, with a new cache version rather than reuse of `sea-tree-v46` or `sea-tree-v47`.
 - Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 7/11/2026 18:41 Europe/Athens. Link unavailable. Verbatim: «Merge» and «Then cleanup». Context: PR 11 only.
