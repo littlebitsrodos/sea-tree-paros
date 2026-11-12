@@ -1,0 +1,37 @@
+# The SeaTree — agent notes
+
+This file repeats the public facts an agent needs. It is not a second website and it does not add contacts that are absent from https://seatree.gr.
+
+## When to use this site
+
+Use The SeaTree site for a stay at this specific house in Aliki, Paros.
+
+- Availability: read `#availability` on a language homepage. The calendar is a guide. The host confirms a stay.
+- Booking enquiry: use WhatsApp, phone, or email. There is no on-site payment.
+- Location: Aliki Beach, Paros, 844 00, Greece.
+- Amenities and stay shape: use `#amenities` and the VacationRental structured data on the homepage. The beachfront apartment is listed with 2 bedrooms, 2 bathrooms, and occupancy 4. Check-in is 15:00 and check-out is 11:00.
+- Language: open `/` (English), `/es/`, `/el/`, or `/fr/`.
+
+Skip this site for general Paros research that is not about staying here.
+
+## Contact and booking
+
+- WhatsApp: https://wa.me/306973286811
+- Phone: +30 697 3286 811 (tel:+306973286811)
+- Enquiry email published on the contact cards and in VacationRental structured data: antocosto@gmail.com
+- Footer email also published on the site: info@seatree.gr
+
+## Pages
+
+- https://seatree.gr/
+- https://seatree.gr/es/
+- https://seatree.gr/el/
+- https://seatree.gr/fr/
+- https://seatree.gr/#availability
+- https://seatree.gr/#amenities
+- https://seatree.gr/#location
+- https://seatree.gr/#contact
+- https://seatree.gr/sitemap.xml
+- https://seatree.gr/llms.txt
+
+GitHub Pages serves HTML. It does not switch the homepage to Markdown when a client sends `Accept: text/markdown`. Use this file, `llms.txt`, or the sitemap instead of content negotiation.

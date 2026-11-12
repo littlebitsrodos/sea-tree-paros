@@ -5,6 +5,13 @@ request or workflow run.
 
 Future changes must add an entry here.
 
+## 2026-11-12
+
+- What: Added `llms.txt`, `llms-full.txt`, a useful `404.html`, and homepage `Organization` JSON-LD with the public enquiry contact and Aliki address. CSP hashes include the new block. Service worker cache is `sea-tree-v49`.
+- Why / Γιατί: is-agentic score improvement, approved by Yorgos 12/11. The stored scan was 73/100 at 2026-10-29T09:48:35.386Z. GitHub Pages cannot answer `Accept: text/markdown`, so the Markdown negotiation check is unchanged.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 12/11/2026 14:01 Europe/Athens. Link unavailable. Verbatim: «α: draft PR μόνο με τις διορθώσεις στο repo του seatree, χωρίς αλλαγή φιλοξενίας» and «Go». Draft review only. This is not approval to merge or publish.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/13
+
 ## 2026-11-07
 
 - What: Recorded the decision to merge the adapted pull request 10 and then remove only its branch, in `DECISIONS.md`. The 22:54 review-only entry stays as it was.

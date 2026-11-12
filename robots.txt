@@ -34,5 +34,8 @@ User-agent: Perplexity-User
 Allow: /
 Disallow: /bookings.json
 
+# Agent instructions
+# https://seatree.gr/llms.txt
+
 # Sitemap location
 Sitemap: https://seatree.gr/sitemap.xml
