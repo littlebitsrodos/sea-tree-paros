@@ -12,7 +12,7 @@
        do not execute type=application/ld+json. The hashes clear the W3C
        checker finding without allowing 'unsafe-inline'. -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-6YdpPk/mZJJs/f4fNzPPx/L86fkpY1GFTqyPvvgYVww=' 'sha256-UrVyk1p+lpWWPNhji2aZd/V+oy05qxQ35XAKrGTqk6M='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com">
+    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-6YdpPk/mZJJs/f4fNzPPx/L86fkpY1GFTqyPvvgYVww=' 'sha256-UrVyk1p+lpWWPNhji2aZd/V+oy05qxQ35XAKrGTqk6M=' 'sha256-tPkCbN7PSeYO1hxUBSy2m9PrEe/TKeo0Cnk/GAWKrUI='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description"
     content="The SeaTree — une location de vacances unique à la plage d'Aliki, Paros, Grèce. Le légendaire disco-bar Romantica, transformé en refuge insulaire serein.">
@@ -194,6 +194,33 @@
     "name": "The SeaTree",
     "url": "https://seatree.gr/",
     "inLanguage": ["en", "es", "el", "fr"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The SeaTree",
+    "url": "https://seatree.gr/",
+    "description": "The SeaTree is a vacation rental at Aliki Beach, Paros, Greece.",
+    "telephone": "+306973286811",
+    "email": "antocosto@gmail.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "reservations",
+      "telephone": "+306973286811",
+      "email": "antocosto@gmail.com",
+      "availableLanguage": ["en", "es", "el", "fr"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Aliki Beach",
+      "addressLocality": "Aliki",
+      "addressRegion": "Paros",
+      "postalCode": "844 00",
+      "addressCountry": "GR"
+    }
   }
   </script>
 

@@ -71,6 +71,9 @@ jobs:
       - name: Run sitemap lastmod contract
         run: python3 scripts/test_sitemap_lastmod.py
 
+      - name: Run agent readiness contract
+        run: node scripts/check_agent_readiness_contract.mjs
+
       - name: Run price parity contract
         run: node scripts/check_price_parity_contract.mjs
 

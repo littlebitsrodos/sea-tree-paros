@@ -7,6 +7,16 @@ URL exists. Do not invent one.
 Earlier approvals for this pull request stay in `CHANGELOG.md` and are
 listed again here so this file does not replace them.
 
+## 2026-11-12 14:01 — Draft agent-readiness changes, no hosting change
+
+- Sender: Yorgos
+- Time: 12/11/2026 14:01 Europe/Athens
+- Channel: direct SeaTree Lead chat
+- Proof link: unavailable
+- Context: raise the is-agentic score of seatree.gr with repository files only. Hosting stays GitHub Pages. Open a draft pull request. Do not merge or publish under this entry.
+- Verbatim: «α: draft PR μόνο με τις διορθώσεις στο repo του seatree, χωρίς αλλαγή φιλοξενίας»
+- Verbatim: «Go»
+
 ## 2026-11-07 23:00 — Merge adapted PR 10, then clean up its branch
 
 - Sender: Yorgos
