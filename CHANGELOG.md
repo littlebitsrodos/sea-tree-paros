@@ -5,6 +5,13 @@ request or workflow run.
 
 Future changes must add an entry here.
 
+## 2026-11-17
+
+- What: Recorded the decision to merge pull request 13 in `DECISIONS.md`. The 12/11 draft entry stays as it was. Branch deletion was not approved.
+- Why / Γιατί: Yorgos approved merging only this pull request.
+- Approval / Έγκριση: Yorgos, direct SeaTree Lead chat, 17/11/2026 15:06 Europe/Athens. Link unavailable. Verbatim: «Merge». Context: PR 13 only.
+- Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/13
+
 ## 2026-11-12
 
 - What: Added `llms.txt`, `llms-full.txt`, a useful `404.html`, and homepage `Organization` JSON-LD with the public enquiry contact and Aliki address. CSP hashes include the new block. Service worker cache is `sea-tree-v49`.

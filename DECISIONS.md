@@ -7,6 +7,17 @@ URL exists. Do not invent one.
 Earlier approvals for this pull request stay in `CHANGELOG.md` and are
 listed again here so this file does not replace them.
 
+## 2026-11-17 15:06 — Merge PR 13
+
+- Sender: Yorgos
+- Time: 17/11/2026 15:06 Europe/Athens
+- Channel: direct SeaTree Lead chat
+- Proof link: unavailable
+- Context: only https://github.com/littlebitsrodos/sea-tree-paros/pull/13
+- Verbatim: «Merge»
+- Meaning: merge that pull request by the repository's normal merge and let the normal Pages pipeline publish. Branch deletion was not approved.
+- Rollback, if the live site breaks after publish: revert this merge commit. A later rollback that changes a cached asset must set a new `CACHE_NAME`. Do not reuse `sea-tree-v46` through `sea-tree-v49`.
+
 ## 2026-11-12 14:01 — Draft agent-readiness changes, no hosting change
 
 - Sender: Yorgos
