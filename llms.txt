@@ -1,0 +1,39 @@
+# The SeaTree
+
+> The SeaTree is a vacation rental at Aliki Beach, Paros, Greece. Agents should use this site to check how to enquire, where the house is, and what the stay includes. The site does not take payment or confirm a booking by itself.
+
+## When to use this site
+
+Use https://seatree.gr when the task is about staying at The SeaTree, not about Paros in general.
+
+Best-fit tasks:
+
+- Check how to ask about availability or a stay. The public calendar is on the English, Spanish, Greek, and French homepages at `#availability`. A date shown there is not a confirmed booking.
+- Start a booking enquiry. Contact the host directly. The site does not complete payment.
+- Find the house: Aliki Beach, Paros, postal code 844 00, Greece.
+- Read the published stay facts: the beachfront apartment is listed as 2 bedrooms, 2 bathrooms, occupancy 4. Check-in 15:00, check-out 11:00. Pets are not listed as allowed.
+- Compare the same pages in English, Spanish, Greek, or French.
+
+Do not use this site for unrelated Paros businesses, private guest data, or unpublished prices beyond the public range already on the page.
+
+## Contact and booking
+
+Public enquiry contacts already shown on the site:
+
+- WhatsApp: https://wa.me/306973286811
+- Phone: tel:+306973286811
+- Email: mailto:antocosto@gmail.com
+- The footer also shows mailto:info@seatree.gr
+
+Enquiry page on each language homepage: `#contact`.
+
+## Key pages
+
+- [English](https://seatree.gr/)
+- [Spanish](https://seatree.gr/es/)
+- [Greek](https://seatree.gr/el/)
+- [French](https://seatree.gr/fr/)
+- [Sitemap](https://seatree.gr/sitemap.xml)
+- [Longer agent notes](https://seatree.gr/llms-full.txt)
+
+Section links, same on each homepage: `#availability`, `#amenities`, `#location`, `#contact`.
