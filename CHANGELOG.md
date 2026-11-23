@@ -7,7 +7,7 @@ Future changes must add an entry here.
 
 ## 2026-11-23
 
-- Οι 4 σελίδες Privacy λένε μόνο ό,τι ισχύει σήμερα, με το εγκεκριμένο κείμενο· το footer email είναι antocosto@gmail.com· cache `sea-tree-v50`.
+- Οι 4 σελίδες Privacy λένε μόνο ό,τι ισχύει σήμερα, με το εγκεκριμένο κείμενο· το footer email είναι antocosto@gmail.com· cache `sea-tree-v50`. Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/14
 
 ## 2026-11-17
 
