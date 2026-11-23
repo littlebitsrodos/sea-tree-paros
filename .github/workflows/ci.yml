@@ -74,6 +74,12 @@ jobs:
       - name: Run agent readiness contract
         run: node scripts/check_agent_readiness_contract.mjs
 
+      - name: Run direct contact contract
+        run: node scripts/check_direct_contact_contract.mjs
+
+      - name: Run privacy policy contract
+        run: node scripts/check_privacy_policy_contract.mjs
+
       - name: Run price parity contract
         run: node scripts/check_price_parity_contract.mjs
 

@@ -5,6 +5,10 @@ request or workflow run.
 
 Future changes must add an entry here.
 
+## 2026-11-23
+
+- Οι 4 σελίδες Privacy λένε μόνο ό,τι ισχύει σήμερα, με το εγκεκριμένο κείμενο· το footer email είναι antocosto@gmail.com· cache `sea-tree-v50`. Link: https://github.com/littlebitsrodos/sea-tree-paros/pull/14
+
 ## 2026-11-17
 
 - What: Recorded the decision to merge pull request 13 in `DECISIONS.md`. The 12/11 draft entry stays as it was. Branch deletion was not approved.

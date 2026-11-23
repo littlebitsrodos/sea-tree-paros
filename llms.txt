@@ -23,7 +23,7 @@ Public enquiry contacts already shown on the site:
 - WhatsApp: https://wa.me/306973286811
 - Phone: tel:+306973286811
 - Email: mailto:antocosto@gmail.com
-- The footer also shows mailto:info@seatree.gr
+- The footer shows the same address: mailto:antocosto@gmail.com
 
 Enquiry page on each language homepage: `#contact`.
 
