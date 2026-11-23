@@ -36,6 +36,21 @@ export function assertDirectContactContract() {
   assert.match(script, /https:\/\/wa\.me\/\$\{HOST_PHONE_E164\}\?text=/, 'calendar selection must include WhatsApp inquiry link');
   assert.match(script, /mailto:\$\{HOST_EMAIL\}\?subject=/, 'calendar selection must include email inquiry link');
   assert.match(script, /class="inquiry-action inquiry-action-primary"/, 'calendar selection must expose primary inquiry CTA');
+
+  const retiredFooterEmail = ['info', 'seatree.gr'].join('@');
+  const retiredFooter = new RegExp(retiredFooterEmail.replace(/[.]/g, '\\.'));
+  assert.doesNotMatch(indexHtml, retiredFooter, 'the homepage footer must not publish the retired mailbox');
+  assert.doesNotMatch(translations, retiredFooter, 'translations must not publish the retired footer mailbox');
+  assert.match(
+    indexHtml,
+    /<a href="mailto:antocosto@gmail\.com" data-translate="footer\.email">antocosto@gmail\.com<\/a>/,
+    'the homepage footer mailto must be the host enquiry address'
+  );
+  assert.equal(
+    (translations.match(/email: "antocosto@gmail\.com"/g) || []).length,
+    4,
+    'each locale footer email must be the host enquiry address'
+  );
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

@@ -275,7 +275,7 @@ const translations = {
       quickLinks: "Quick Links",
       contactTitle: "Contact",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Aliki Beach, Paros 844 00, Greece",
       copyright: "© 2026 The SeaTree. All rights reserved.",
       privacyLink: "Privacy Policy"
@@ -561,7 +561,7 @@ const translations = {
       quickLinks: "Enlaces Rápidos",
       contactTitle: "Contacto",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Playa de Aliki, Paros 844 00, Grecia",
       copyright: "© 2026 The SeaTree. Todos los derechos reservados.",
       privacyLink: "Política de Privacidad"
@@ -847,7 +847,7 @@ const translations = {
       quickLinks: "Γρήγοροι Σύνδεσμοι",
       contactTitle: "Επικοινωνία",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
       copyright: "© 2026 The SeaTree. Με επιφύλαξη παντός δικαιώματος.",
       privacyLink: "Πολιτική Απορρήτου"
@@ -1133,7 +1133,7 @@ const translations = {
       quickLinks: "Liens Rapides",
       contactTitle: "Contact",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
       copyright: "© 2026 The SeaTree. Tous droits réservés.",
       privacyLink: "Politique de Confidentialité"

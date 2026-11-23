@@ -7,6 +7,20 @@ URL exists. Do not invent one.
 Earlier approvals for this pull request stay in `CHANGELOG.md` and are
 listed again here so this file does not replace them.
 
+## 2026-11-23 — Privacy text, footer email, retention, AMA, map, and Viva
+
+- Sender: Yorgos
+- Time: 23/11/2026
+- Proof link: unavailable
+- Context: what the four Privacy pages may say, and which email the footer publishes. This entry approves that text for review. It is not approval to merge or publish.
+- Στοιχεία εταιρείας (ΑΚΤΑΙ ΠΑΡΟΥ Ι.Κ.Ε.). Verbatim: «ισχυουν»
+- Email (antocosto@gmail.com στο Privacy και στο footer, στη θέση του info@seatree.gr που δεν έχει MX). Verbatim: «Α> Β»
+- Διατήρηση μηνυμάτων χωρίς κράτηση. Verbatim: «12 μηνες ειναι οκ»
+- Καθεστώς. Verbatim: «Εχει αμα». Meaning: βραχυχρόνια μίσθωση με ΑΜΑ, όχι αστυνομικό βιβλίο.
+- Χάρτης Google. Verbatim: «Χαρτης οπως ειναι»
+- Viva. Verbatim: «Η Viva δεν έχει στηθεί, να μπει αργότερα»
+- Κείμενο Privacy. Verbatim: «Οκ»
+
 ## 2026-11-17 15:06 — Merge PR 13
 
 - Sender: Yorgos
